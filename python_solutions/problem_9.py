@@ -25,9 +25,6 @@ def main():
     end_time = time.process_time()
     print("Time taken for square sum relation solution: {}".format(end_time - start_time))
 
-    # convert list to int for math.prod
-    triplet = [int(i) for i in triplet]
-
     if (triplet is None):
         print("Triplet not found. This shouldn't trigger.")
         exit(-1)
