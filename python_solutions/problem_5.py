@@ -6,19 +6,25 @@ https://projecteuler.net/problem=5
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 """
 
-import sys
+import time
 
-test_num = 0
-lowest = -1
-while lowest == -1:
-    # don't need to test any number not ending in 5 or 0
-    test_num += 5
+def main():
 
-    for i in range(1, 21):
-        if (test_num % i != 0):
-            break
-    # triggers if iteration does NOT end in a break
-    else:
-        lowest = test_num
+    n = 0
+    low = 0
+    
+    start_time = time.process_time()
 
-print("The smallest positive number evenly divisible by 1-20: {}".format(lowest))
+    while not low:
+        n += 20
+        for i in range(1, 21):
+            if (n % i != 0):
+                break
+        else:
+            low = n
+    
+    end_time = time.process_time()
+    print("time to find solution: {}".format(end_time - start_time))
+    print("smallest number divisible by 1-20: {}".format(low))
+
+main()

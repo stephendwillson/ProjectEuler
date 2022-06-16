@@ -6,20 +6,17 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
 
-import sys
+def main():
 
-highest = -1
-end_i = -1
-end_j = -1
-for i in range(1,1000):
-    for j in range(1,1000):
-        product = i * j
-        # cast as a string and compare front to back
-        if (str(product) == str(product)[::-1]):
-            end_i = i
-            end_j = j
-            if (product > highest):
-                highest = product
+    palindromes = list()
 
-print("The largest palindrome from the product of two 3-digit numbers: {}".format(highest))
-print("This is the product of {} x {}".format(end_i, end_j))
+    for i in range(1, 1000):
+        for j in range(1, 1000):
+            prod = i * j
+
+            if (str(prod) == str(prod)[::-1]):
+                palindromes.append(prod)
+
+    print("largest palindrome: {}".format(max(palindromes)))
+
+main()
