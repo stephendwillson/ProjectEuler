@@ -32,6 +32,9 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 
 import math
 
+import euler_lib
+
+
 def main():
 
     # n adjacent numbers
@@ -67,6 +70,8 @@ def main():
                     ["81", "49", "31", "73"],
                     ["52", "70", "95", "23"]
                 ]
+
+    # euler_lib.print_grid(grid)
 
     prod = get_highest_product(n - 1, grid)
     print("highest product: {}".format(prod))
@@ -112,14 +117,5 @@ def get_int_grid(grid):
             grid[i][j] = int(grid[i][j])
 
     return grid
-
-def print_grid(grid):
-
-    p = ""
-    for i in range(len(grid)):
-        for j in range(len(grid)):
-            p += "{} ".format(grid[i][j])
-        print(p)
-        p = ""
 
 main()

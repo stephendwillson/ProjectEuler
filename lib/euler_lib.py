@@ -5,6 +5,31 @@ Common functionality for solving Project Euler problems.
 
 import math
 
+
+# get number of paths from (0, 0) -> (m, n) only moving right or down
+def count_lattice_paths(n, m):
+
+    # n x m lattice paths will always have n + m steps
+    # out of n + m, count all possible downward steps, anything left is rightward
+    return math.factorial(n + m) // math.factorial(n) // math.factorial(m)
+
+# print n x m grid
+def print_grid(grid): 
+ 
+    n = len(grid)
+    m = len(grid[0])
+
+    if n == 0:
+        print("Grid is empty!")
+
+    p = ""
+    for i in range(0, n): 
+        for j in range(0, m): 
+            p += "{} ".format(grid[i][j]) 
+        
+        print(p)
+        p = ""
+
 # add up all the digits in n
 def sum_digits(n):
 
