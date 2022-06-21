@@ -6,9 +6,9 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
-count = 0
-for i in range(1,1000):
-    if (i % 5 == 0 or i % 3 == 0):
-        count += i
+total = 0
+for i in range(1, 1000):
+    if i % 5 == 0 or i % 3 == 0:
+        total += i
 
-print("count: {}".format(count))
+print("total: {}".format(total))

@@ -23,76 +23,33 @@ What is the value of the first triangle number to have over five hundred divisor
 import time
 import math
 
+import euler_lib
+
+
 def main():
 
     n = 500
 
-    # start_time = time.process_time()
-    # takes ~17000s
-    # triangle, divisors = div(n, fast=False)
-    # end_time = time.process_time()
-    
-    # print("time to calculate slow: {}".format(end_time - start_time))
-    # print("triangle: {}".format(triangle))
-    # print("number of divisors: {}".format(len(divisors)))
-
     start_time = time.process_time()
-    # takes ~6s
-    triangle, divisors = div(n, fast=True)
+    triangle, divisors = div(n)
     end_time = time.process_time()
 
-    print("time to calculate fast: {}".format(end_time - start_time))
+    print("time to calculate: {}".format(end_time - start_time))
     print("triangle: {}".format(triangle))
     print("number of divisors: {}".format(len(divisors)))
 
-def div(n, fast):
+def div(n):
 
     divisors = list()
-    tmp = list()
+    tmp = 0
 
     i = 0
     while len(divisors) < n:
         i += 1
 
-        triangle = triangle_number(i)
-        if (fast):
-            divisors = get_divisors_fast(triangle)
-        else:
-            divisors = get_divisors_slow(triangle)
-
-        if (len(divisors) > len(tmp)):
-            tmp = divisors
-
+        triangle = euler_lib.get_triangle_number(i)
+        divisors = euler_lib.get_factors(triangle)
+    
     return triangle, divisors
-
-def get_divisors_slow(n):
-
-    divisors = list()
-
-    for i in range(1, n + 1):
-        if (n % i == 0):
-            divisors.append(i)
-    
-    return divisors
-
-def get_divisors_fast(n):
-
-    divisors = list()
-
-    for i in range(1, int(math.sqrt(n)) + 1):
-        if (n % i == 0):
-            divisors.append(n // i)
-            if (i not in divisors):
-                divisors.append(i)
-
-    return divisors
-
-def triangle_number(n):
-
-    triangle = 0
-    for i in range(1, n + 1):
-        triangle += i
-    
-    return triangle
 
 main()

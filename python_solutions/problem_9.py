@@ -15,20 +15,16 @@ import time
 
 def main():
 
-    start_time = time.process_time()
-    triplet = brute_force()
-    end_time = time.process_time()
-    print("Time taken for brute force: {}".format(end_time - start_time))
+    # start_time = time.process_time()
+    # triplet = brute_force()
+    # end_time = time.process_time()
+    # print("Time taken for brute force: {}".format(end_time - start_time))
 
     start_time = time.process_time()
     triplet = optimized()
     end_time = time.process_time()
     print("Time taken for square sum relation solution: {}".format(end_time - start_time))
 
-    if (triplet is None):
-        print("Triplet not found. This shouldn't trigger.")
-        exit(-1)
-    
     # convert list to int for math.prod
     triplet = [int(i) for i in triplet]
 
@@ -60,7 +56,7 @@ def optimized():
             b = 2*m*n
             c = m*m + n*n
 
-            if (a + b + c == 1000):
+            if a + b + c == 1000:
                 return [a, b, c]
 
         m += 1

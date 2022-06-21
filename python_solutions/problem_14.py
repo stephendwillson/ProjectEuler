@@ -18,36 +18,24 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 import time
 
-def main():
+import euler_lib
 
-    n = 1000000
 
-    longest = 0
-    start_num = 0
+n = 1000000
 
-    start_time = time.process_time()
-    for i in range(2, n + 1):
-        tmp_longest = collatz(i)
-        if (tmp_longest > longest):
-            longest = tmp_longest
-            start_num = i
-    end_time = time.process_time()
+longest = 0
+start_num = 0
 
-    print("time to calculate: {}".format(end_time - start_time))
-    print("length of chain: {}".format(longest))
-    print("starting number: {}".format(start_num))
+start_time = time.process_time()
+for i in range(1, n + 1):
+    
+    tmp = euler_lib.get_collatz_length(i)
 
-def collatz(n):
+    if tmp > longest:
+        longest = tmp
+        start_num = i
+end_time = time.process_time()
 
-    count = 1
-    while n > 1:
-        if (n % 2 == 0):
-            n = n/2
-        else:
-            n = 3*n + 1
-        
-        count += 1
-
-    return count
-
-main()
+print("time to calculate: {}".format(end_time - start_time))
+print("length of chain: {}".format(longest))
+print("starting number: {}".format(start_num))

@@ -3,7 +3,6 @@ https://projecteuler.net/problem=11
 
 In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
 
-
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -69,8 +68,6 @@ def main():
                     ["52", "70", "95", "23"]
                 ]
 
-    #print_grid(grid)
-
     prod = get_highest_product(n - 1, grid)
     print("highest product: {}".format(prod))
 
@@ -84,28 +81,27 @@ def get_highest_product(n, grid):
     for i in range(0, len(grid) - n):
         for j in range(0, len(grid) - n): 
             
-            # stuff vertical, horizontal, and both downward diagonal prods into lists
-            prod_i = list()
-            prod_j = list()
-            prod_ij = list()
-            prod_back = list()
+            prod_i = 1
+            prod_j = 1
+            prod_diag = 1
+            prod_back = 1
             for a in range(0, n + 1):
-                prod_i.append(grid[i+a][j])
-                prod_j.append(grid[i][j+a])
-                prod_ij.append(grid[i+a][j+a])
+                prod_i *= grid[i+a][j]
+                prod_j *= grid[i][j+a]
+                prod_diag *= grid[i+a][j+a]
                 # backwards diagonal
-                if (j - a >= 0):
-                    prod_back.append(grid[i+a][j-a])
+                if j - a >= 0:
+                    prod_back *= grid[i+a][j-a]
 
             # update prod if a new high is found
-            if (math.prod(prod_i) > prod):
-                prod = math.prod(prod_i)
-            if (math.prod(prod_j) > prod):
-                prod = math.prod(prod_j)
-            if (math.prod(prod_ij) > prod):
-                prod = math.prod(prod_ij)
-            if (math.prod(prod_back) > prod):
-                prod = math.prod(prod_back)
+            if prod_i > prod:
+                prod = prod_i
+            if prod_j > prod:
+                prod = prod_j
+            if prod_diag > prod:
+                prod = prod_diag
+            if prod_back > prod:
+                prod = prod_back
 
     return prod
 

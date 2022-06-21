@@ -13,32 +13,15 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 """
 
-def main():
+import euler_lib
 
-    n = 100
 
-    summed = sum_of_squares(n)
-    squared = square_of_sums(n)
-    delta = squared - summed
+n = 100
 
-    print("Sum of squares: {}".format(summed))
-    print("Square of sums: {}".format(squared))
-    print("Delta: {} - {} = {}".format(squared, summed, delta))
+summed = euler_lib.sum_of_squares(n)
+squared = euler_lib.square_of_sums(n)
+delta = squared - summed
 
-def sum_of_squares(n):
-    
-    total = 0
-    for i in range(1, n + 1):
-        total += i * i
-
-    return total
-
-def square_of_sums(n):
-    
-    total = 0
-    for i in range(1, n + 1):
-        total += i
-
-    return total * total
-
-main()
+print("Sum of squares: {}".format(summed))
+print("Square of sums: {}".format(squared))
+print("Delta: {} - {} = {}".format(squared, summed, delta))

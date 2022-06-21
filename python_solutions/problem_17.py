@@ -54,15 +54,15 @@ def main():
 def parse(n):
 
     # 0-9
-    if (len(n) == 1):
+    if len(n) == 1:
         return nums[n]
     
     # 10-99
-    elif (len(n) == 2):
+    elif len(n) == 2:
         return get_tens(n)
     
     # 100-999
-    elif (len(n) == 3):
+    elif len(n) == 3:
         return get_hundreds(n)
     
     # 1000
@@ -72,15 +72,15 @@ def parse(n):
 def get_tens(n):
 
     # 00, 01, ... , 08, 09
-    if (n[0] == "0"):
+    if n[0] == "0":
         n = n[1:]
 
     # 1-19
-    if (int(n) < 20):
+    if int(n) < 20:
         return nums[n]
     
     # 20, 30, ... , 80, 90
-    elif (int(n) % 10 == 0):
+    elif int(n) % 10 == 0:
         return nums[n]
     
     # x != 0: 2x, 3x, ... , 8x, 9x
@@ -95,11 +95,11 @@ def get_tens(n):
 def get_hundreds(n):
 
     # 1000
-    if (int(n) == "000"):
+    if int(n) == "000":
         return ""
 
     # 100, 200, ... , 800, 900
-    if (int(n) % 100 == 0):
+    if int(n) % 100 == 0:
         return "{}{}".format(nums[n[0]], "hundred")
     
     # 101, 102, ... 989, 999

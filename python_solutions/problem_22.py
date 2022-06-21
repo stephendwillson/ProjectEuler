@@ -27,12 +27,13 @@ def main():
     i = 0
     for name in names:
 
-        name_score = 0
         i += 1
+        name_score = 0
+
         tmp = 0
         for char in name:
             char_index = string.ascii_uppercase.find(char)
-            if (char_index != -1):
+            if char_index != -1:
                 tmp += char_index + 1 # A == [0] --> A == 1 score
 
         name_score = tmp * i
