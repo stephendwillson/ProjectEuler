@@ -92,18 +92,23 @@ def get_factors(n):
     if n <= 1:
         return factors
 
-    i = 1
-    while i <= math.floor(math.sqrt(n)):
+    for i in range(1, math.floor(math.sqrt(n)) + 1):
         if n % i == 0:
+            factors.append(i)
 
-            if n / i == 0: # if divisors are equal
-                factors.append(i)
-            else:
-                factors.append(i)
-                factors.append(n / i)
+            if n / i != i:
+                factors.append(math.floor(n / i))
+    
+    return factors
 
-        i += 1
+# all factors except for self
+def get_proper_factors(n):
 
+    factors = get_factors(n)
+
+    if n in factors:
+        factors.remove(n)
+    
     return factors
 
 # simple prime checker
