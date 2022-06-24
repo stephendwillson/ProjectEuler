@@ -6,6 +6,20 @@ Common functionality for solving Project Euler problems.
 import math
 
 
+# leap year checker
+def is_leap_year(y):
+
+    if y % 400 == 0:
+        return True
+
+    if y % 100 == 0:
+        return False
+
+    if y % 4 == 0:
+        return True
+
+    return False
+
 # get number of paths from (0, 0) -> (m, n) only moving right or down
 def count_lattice_paths(n, m):
 
