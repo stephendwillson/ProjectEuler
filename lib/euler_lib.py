@@ -6,6 +6,10 @@ Common functionality for solving Project Euler problems.
 import math
 
 
+def is_palindrome(s):
+
+    return str(s) == str(s)[::-1]
+
 # leap year checker
 def is_leap_year(y):
 
