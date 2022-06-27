@@ -23,6 +23,7 @@ for i in range(12, ceiling):
     if sum(factors) > i:
         abundant.append(i)
 
+# calculate all possible sums once up front; brute force recalcs took ~1100s
 # mark index in array for every possible sum of abundants
 # in the end, any unmarked index is a number that can't be written as a sum of 2 abundants
 sums = [False] * (ceiling + 1)
