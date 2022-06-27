@@ -8,37 +8,22 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 What is the total of all the name scores in the file?
 """
 
-import string
+import euler_lib
 
-def main():
 
-    filepath = "../supplemental/p22_names.txt"
-    with open(filepath) as f:
-        names_str = f.read()
+filepath = "../supplemental/p22_names.txt"
+with open(filepath) as f:
+    names_str = f.read()
 
-    # clean up and sort list of names
-    names = names_str.split(",")
-    for i in range(len(names)):
-        names[i] = names[i].replace("\"", "")
-    names.sort()
+# clean up and sort list of names
+names = names_str.split(",")
+for i in range(len(names)):
+    names[i] = names[i].replace("\"", "")
+names.sort()
 
-    # search for every char in A-Z and add position in alphabet to total
-    total = 0
-    i = 0
-    for name in names:
+total = 0
+for i in range(len(names)):
+    score = euler_lib.get_word_score(names[i])
+    total += score * (i + 1)
 
-        i += 1
-        name_score = 0
-
-        tmp = 0
-        for char in name:
-            char_index = string.ascii_uppercase.find(char)
-            if char_index != -1:
-                tmp += char_index + 1 # A == [0] --> A == 1 score
-
-        name_score = tmp * i
-        total += name_score
-
-    print("total name score: {}".format(total))
-
-main()
+print("total name score: {}".format(total))
