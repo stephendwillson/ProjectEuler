@@ -4,6 +4,20 @@ Common functionality for solving Project Euler problems.
 """
 
 import math
+import string
+
+# add up total for word where A=1, B=2, ..., Y=25, Z=26
+def get_word_score(s):
+
+    s = s.upper()
+    score = 0
+    
+    for char in s:
+        char_index = string.ascii_uppercase.find(char)
+        if char_index != -1:
+            score += char_index + 1 # A == [0] --> A == 1 score
+            
+    return score
 
 # circular prime == all rotations of N are prime, ie 197: 197, 719, 971
 def is_circular_prime(n):
