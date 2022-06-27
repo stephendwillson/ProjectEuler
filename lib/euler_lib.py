@@ -5,6 +5,23 @@ Common functionality for solving Project Euler problems.
 
 import math
 
+# circular prime == all rotations of N are prime, ie 197: 197, 719, 971
+def is_circular_prime(n):
+
+    tmp = str(n)
+
+    for i in range(0, len(tmp)):
+        
+        tmp = rotate(str(n), i)
+        if not is_prime(int(tmp)):
+            return False
+
+    return True
+
+# circular rotate string by N positions
+def rotate(s, n):
+
+    return s[n:] + s[:n]
 
 def is_palindrome(s):
 
