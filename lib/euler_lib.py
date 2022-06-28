@@ -6,6 +6,22 @@ Common functionality for solving Project Euler problems.
 import math
 import string
 
+# collapse triangle upwards, updating bottom row with current maximums
+def get_triangle_max_path_sum(t):
+    
+    for i in range(len(t) - 1, 0, -1):
+        
+        # make new row of maximums of bottom 2 rows
+        tmp = list()
+        for j in range(0, len(t[i-1])):
+            tmp.append(t[i-1][j] + max(t[i][j], t[i][j+1]))
+        
+        # get rid of current bottom row, replace new bottom with updated maximums
+        t.pop() 
+        t[-1] = tmp
+    
+    return t[0][0]
+
 # add up total for word where A=1, B=2, ..., Y=25, Z=26
 def get_word_score(s):
 
@@ -65,17 +81,14 @@ def count_lattice_paths(n, m):
 # print n x m grid
 def print_grid(grid): 
  
-    n = len(grid)
-    m = len(grid[0])
-
-    if n == 0:
+    if len(grid) == 0:
         print("Grid is empty!")
 
     p = ""
-    for i in range(0, n): 
-        for j in range(0, m): 
-            p += "{} ".format(grid[i][j]) 
-        
+    for i in range(0, len(grid)):
+        for ele in grid[i]:
+            p += "{} ".format(ele)
+
         print(p)
         p = ""
 
