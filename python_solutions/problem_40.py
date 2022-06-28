@@ -1,4 +1,20 @@
-"""
+def main():
+
+    ceiling = 1000000
+
+    d = ""
+    i = 0
+    while len(d) < ceiling:
+        i += 1
+        d = d + str(i)
+
+    total = int(d[0]) * int(d[9]) * int(d[99]) * int(d[999]) * int(d[9999]) * int(d[99999]) * int(d[999999])
+
+    print(total)
+
+def description():
+
+    desc = """
 https://projecteuler.net/problem=40
 
 An irrational decimal fraction is created by concatenating the positive integers:
@@ -12,15 +28,7 @@ If d(n) represents the nth digit of the fractional part, find the value of the f
 
 d(1) × d(10) × d(100) × d(1000) × d(10000) × d(100000) × d(1000000)
 """
+    print(desc, end="")
 
-ceiling = 1000000
-
-d = ""
-i = 0
-while len(d) < ceiling:
-    i += 1
-    d = d + str(i)
-
-total = int(d[0]) * int(d[9]) * int(d[99]) * int(d[999]) * int(d[9999]) * int(d[99999]) * int(d[999999])
-
-print(total)
+if __name__ == "__main__":
+    main()
