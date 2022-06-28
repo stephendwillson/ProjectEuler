@@ -1,4 +1,27 @@
-"""
+import euler_lib
+
+
+def main():
+    
+    n = 1000000
+
+    longest = 0
+    start_num = 0
+
+    for i in range(1, n + 1):
+        
+        tmp = euler_lib.get_collatz_length(i)
+
+        if tmp > longest:
+            longest = tmp
+            start_num = i
+
+    print("length of chain: {}".format(longest))
+    print("starting number: {}".format(start_num))
+
+def description():
+
+    desc = """
 https://projecteuler.net/problem=14
 
 The following iterative sequence is defined for the set of positive integers:
@@ -15,27 +38,7 @@ Which starting number, under one million, produces the longest chain?
 
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
+    print(desc, end="")
 
-import time
-
-import euler_lib
-
-
-n = 1000000
-
-longest = 0
-start_num = 0
-
-start_time = time.process_time()
-for i in range(1, n + 1):
-    
-    tmp = euler_lib.get_collatz_length(i)
-
-    if tmp > longest:
-        longest = tmp
-        start_num = i
-end_time = time.process_time()
-
-print("time to calculate: {}".format(end_time - start_time))
-print("length of chain: {}".format(longest))
-print("starting number: {}".format(start_num))
+if __name__ == "__main__":
+    main()

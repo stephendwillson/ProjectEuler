@@ -1,4 +1,28 @@
-"""
+import euler_lib
+
+
+def main():
+
+    filepath = "../supplemental/p22_names.txt"
+    with open(filepath) as f:
+        names_str = f.read()
+
+    # clean up and sort list of names
+    names = names_str.split(",")
+    for i in range(len(names)):
+        names[i] = names[i].replace("\"", "")
+    names.sort()
+
+    total = 0
+    for i in range(len(names)):
+        score = euler_lib.get_word_score(names[i])
+        total += score * (i + 1)
+
+    print("total name score: {}".format(total))
+
+def description():
+
+    desc = """
 https://projecteuler.net/problem=22
 
 Using names.txt (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
@@ -7,23 +31,7 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 
 What is the total of all the name scores in the file?
 """
+    print(desc, end="")
 
-import euler_lib
-
-
-filepath = "../supplemental/p22_names.txt"
-with open(filepath) as f:
-    names_str = f.read()
-
-# clean up and sort list of names
-names = names_str.split(",")
-for i in range(len(names)):
-    names[i] = names[i].replace("\"", "")
-names.sort()
-
-total = 0
-for i in range(len(names)):
-    score = euler_lib.get_word_score(names[i])
-    total += score * (i + 1)
-
-print("total name score: {}".format(total))
+if __name__ == "__main__":
+    main()

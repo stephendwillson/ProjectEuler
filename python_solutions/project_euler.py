@@ -2,6 +2,7 @@
 Test harness for Project Euler problems
 """
 
+import time
 import argparse
 import subprocess
 import os
@@ -11,34 +12,47 @@ import pathlib
 def main():
 
     problem_help = "Space-separated list of problems. Chooses ALL problems if none are specified."
-    info_help = "Prints description of specified problems."
-    
+    verbose_help = "Prints description of specified problems."
+    solve_help = "Solve the specified problems. Does not solve by default."
+
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--problem", help=problem_help, nargs="+")
-    parser.add_argument("-i", "--info", help=info_help, action="store_true")
+    parser.add_argument("-v", "--verbose", help=verbose_help, action="store_true")
+    parser.add_argument("-s", "--solve", help=solve_help, action="store_true")
 
     args = parser.parse_args()
 
     problems = build_problem_list(args.problem)
-    if args.info:
-        print_problem_info(problems)
-        exit()
+    
+    for problem in problems:
+        if args.verbose:
+            print_problem_info(problem)
+        if args.solve:
+            solution = solve_problem(problem)
+            clean_name = pathlib.Path(problem).stem.upper().replace("_", " ")
+            print("{}: {}".format(clean_name, solution))
 
-def print_problem_info(problems):
+def solve_problem(problem):
+
+    solution = 0
+    # solve solve solve
+
+    return solution
+
+def print_problem_info(problem):
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    for problem in problems:
-        print("=" * 80)
+    print("=" * 80)
 
-        p_name = pathlib.Path(problem).stem
-        print("Problem: {}".format(p_name))
-        
-        p = importlib.import_module(p_name)
-        p.description()
+    p_name = pathlib.Path(problem).stem
+    print("{}".format(p_name.upper().replace("_", " ")))
+    
+    p = importlib.import_module(p_name)
+    p.description()
 
-        print("=" * 80)
-        print()
+    print("=" * 80)
+    print()
 
 
 def build_problem_list(problem_args):
