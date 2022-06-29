@@ -1,9 +1,12 @@
+import os
+
 import euler_lib
 
 
 def main():
 
-    filepath = "../supplemental/p22_names.txt"
+    supplemental_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "supplemental")
+    filepath = os.path.join(supplemental_dir, "p22_names.txt")
     with open(filepath) as f:
         names_str = f.read()
 

@@ -1,3 +1,5 @@
+import os
+
 import euler_lib
 
 
@@ -12,7 +14,8 @@ def main():
         triangles.append(euler_lib.get_triangle_number(i))
 
     # read in words
-    filepath = "../supplemental/p42_words.txt"
+    supplemental_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "supplemental")
+    filepath = os.path.join(supplemental_dir, "p42_words.txt")
     with open(filepath) as f:
         words_str = f.read()
 

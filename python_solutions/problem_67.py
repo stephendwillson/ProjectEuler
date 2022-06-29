@@ -1,10 +1,15 @@
+import os
+
 import euler_lib
 
 
 def main():
 
     t = list()
-    filepath = "../supplemental/p67_triangle.txt"
+
+
+    supplemental_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "supplemental")
+    filepath = os.path.join(supplemental_dir, "p67_triangle.txt")
     with open(filepath) as f:
         t_lines = f.readlines()
         for line in t_lines:

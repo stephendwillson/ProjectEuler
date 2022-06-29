@@ -1,11 +1,12 @@
 """
-Test harness for Project Euler problems
+Run Project Euler problem solver scripts
 """
 
 import time
 import argparse
 import subprocess
 import os
+import sys
 import importlib
 import pathlib
 
@@ -47,8 +48,6 @@ def solve_problem(problem):
 
 def print_problem_info(problem):
 
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-
     print("=" * 80)
 
     p_name = pathlib.Path(problem).stem 
@@ -64,7 +63,10 @@ def print_problem_info(problem):
 def build_problem_list(problem_args):
 
     p_list = []
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "python_solutions")
+
+    # clunky -- this is so imports in solving and printing info work with this script in separate dir
+    sys.path.append(script_dir)
 
     # if no -p arg is passed in, run all problems
     if problem_args is None:
@@ -83,6 +85,7 @@ def build_problem_list(problem_args):
 
     # "magic" - sort file names by problem number
     p_list.sort(key=lambda f: int("".join(filter(str.isdigit, f))))
+    
     return p_list
 
 main()
