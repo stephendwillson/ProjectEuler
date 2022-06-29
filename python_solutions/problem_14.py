@@ -38,6 +38,8 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
     print(desc, end="")
+
 pe_name = "LONGEST COLLATZ SEQUENCE"
+
 if __name__ == "__main__":
-    main()
+    print(main())

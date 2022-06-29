@@ -32,6 +32,8 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 What is the total of all the name scores in the file?
 """
     print(desc, end="")
+
 pe_name = "NAMES SCORES"
+
 if __name__ == "__main__":
-    main()
+    print(main())

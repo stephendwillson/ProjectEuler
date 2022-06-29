@@ -19,6 +19,8 @@ https://projecteuler.net/problem=16
 What is the sum of the digits of the number 2^1000?
 """
     print(desc, end="")
+
 pe_name = "POWER DIGIT SUM"
+
 if __name__ == "__main__":
-    main()
+    print(main())

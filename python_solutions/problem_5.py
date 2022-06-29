@@ -23,6 +23,8 @@ https://projecteuler.net/problem=5
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 """
     print(desc, end="")
+
 pe_name = "SMALLEST MULTIPLE"
+
 if __name__ == "__main__":
-    main()
+    print(main())

@@ -29,6 +29,8 @@ If d(n) represents the nth digit of the fractional part, find the value of the f
 d(1) × d(10) × d(100) × d(1000) × d(10000) × d(100000) × d(1000000)
 """
     print(desc, end="")
+
 pe_name = "CHAMPERNOWNE'S CONSTANT"
+
 if __name__ == "__main__":
-    main()
+    print(main())

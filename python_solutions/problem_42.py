@@ -44,6 +44,8 @@ By converting each letter in a word to a number corresponding to its alphabetica
 Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
 """
     print(desc, end="")
+
 pe_name = "CODED TRIANGLE NUMBERS"
-if __name__ == "__main__":
-    main()
+
+if __name__ == "__main__":    
+    print(main())

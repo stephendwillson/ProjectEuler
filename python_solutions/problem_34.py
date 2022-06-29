@@ -64,6 +64,8 @@ Find the sum of all numbers which are equal to the sum of the factorial of their
 Note: As 1! = 1 and 2! = 2 are not sums they are not included.
 """
     print(desc, end="")
+
 pe_name = "DIGIT FACTORIALS"
+
 if __name__ == "__main__":
-    main()
+    print(main())

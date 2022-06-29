@@ -25,6 +25,8 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73
 How many circular primes are there below one million?
 """
     print(desc, end="")
+
 pe_name = "CIRCULAR PRIMES"
+
 if __name__ == "__main__":
-    main()
+    print(main())

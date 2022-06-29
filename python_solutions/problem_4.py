@@ -21,6 +21,8 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
     print(desc, end="")
+
 pe_name = "LARGEST PALINDROME PRODUCT"
+
 if __name__ == "__main__":
-    main()
+    print(main())

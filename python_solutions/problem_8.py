@@ -58,6 +58,8 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 """
     print(desc, end="")
+
 pe_name = "LARGEST PRODUCT IN A SERIES"
+
 if __name__ == "__main__":
-    main()
+    print(main())
