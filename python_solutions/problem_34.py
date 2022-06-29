@@ -66,6 +66,7 @@ Note: As 1! = 1 and 2! = 2 are not sums they are not included.
     print(desc, end="")
 
 pe_name = "DIGIT FACTORIALS"
+pe_solution = 40730
 
 if __name__ == "__main__":
     print(main())

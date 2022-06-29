@@ -23,6 +23,7 @@ Find the largest palindrome made from the product of two 3-digit numbers.
     print(desc, end="")
 
 pe_name = "LARGEST PALINDROME PRODUCT"
+pe_solution = 906609
 
 if __name__ == "__main__":
     print(main())

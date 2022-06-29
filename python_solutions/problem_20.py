@@ -27,6 +27,7 @@ Find the sum of the digits in the number 100!
     print(desc, end="")
 
 pe_name = "FACTORIAL DIGIT SUM"
+pe_solution = 648
 
 if __name__ == "__main__":
     print(main())

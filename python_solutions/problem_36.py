@@ -28,6 +28,7 @@ Find the sum of all numbers, less than one million, which are palindromic in bas
     print(desc, end="")
 
 pe_name = "DOUBLE-BASE PALINDROMES"
+pe_solution = 872187
 
 if __name__ == "__main__":
     print(main())

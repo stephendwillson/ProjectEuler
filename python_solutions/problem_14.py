@@ -40,6 +40,7 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
     print(desc, end="")
 
 pe_name = "LONGEST COLLATZ SEQUENCE"
+pe_solution = 837799
 
 if __name__ == "__main__":
     print(main())

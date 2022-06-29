@@ -31,6 +31,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
     print(desc, end="")
 
 pe_name = "EVEN FIBONACCI NUMBERS"
+pe_solution = 4613732
 
 if __name__ == "__main__":
     print(main())

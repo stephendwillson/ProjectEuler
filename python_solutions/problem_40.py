@@ -31,6 +31,7 @@ d(1) × d(10) × d(100) × d(1000) × d(10000) × d(100000) × d(1000000)
     print(desc, end="")
 
 pe_name = "CHAMPERNOWNE'S CONSTANT"
+pe_solution = 210
 
 if __name__ == "__main__":
     print(main())

@@ -45,6 +45,7 @@ Find the product abc.
     print(desc, end="")
 
 pe_name = "SPECIAL PYTHAGOREAN TRIPLET"
+pe_solution = 31875000
 
 if __name__ == "__main__":
     print(main())

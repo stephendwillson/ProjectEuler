@@ -24,6 +24,7 @@ How many such routes are there through a 20×20 grid?
     print(desc, end="")
 
 pe_name = "LATTICE PATHS"
+pe_solution = 137846528820
 
 if __name__ == "__main__":
     print(main())

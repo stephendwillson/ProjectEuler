@@ -112,6 +112,7 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
     print(desc, end="")
 
 pe_name = "NUMBER LETTER COUNTS"
+pe_solution = 21124
 
 if __name__ == "__main__":
     print(main())

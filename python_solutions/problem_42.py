@@ -49,6 +49,7 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file cont
     print(desc, end="")
 
 pe_name = "CODED TRIANGLE NUMBERS"
+pe_solution = 162
 
 if __name__ == "__main__":    
     print(main())

@@ -109,7 +109,7 @@ def main():
     for i in range(0, len(addends)):
         total += addends[i]
 
-    n_digits = str(total)[0:n:]
+    n_digits = int(str(total)[0:n:])
 
     return n_digits
 
@@ -223,6 +223,7 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
     print(desc, end="")
 
 pe_name = "LARGE SUM"
+pe_solution = 5537376230
 
 if __name__ == "__main__":
     print(main())

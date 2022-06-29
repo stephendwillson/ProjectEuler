@@ -49,6 +49,7 @@ Find the sum of all the positive integers which cannot be written as the sum of 
     print(desc, end="")
 
 pe_name = "NON-ABUNDANT SUMS"
+pe_solution = 4179871
 
 if __name__ == "__main__":
     print(main())

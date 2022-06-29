@@ -8,7 +8,7 @@ def main():
     permutations = list(itertools.permutations(digits))
     permutations.sort()
 
-    nth_permutation = "".join(str(p) for p in permutations[n - 1])
+    nth_permutation = int("".join(str(p) for p in permutations[n - 1]))
 
     return nth_permutation
 
@@ -26,6 +26,7 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
     print(desc, end="")
 
 pe_name = "LEXICOGRAPHIC PERMUTATIONS"
+pe_solution = 2783915460
 
 if __name__ == "__main__":
     print(main())

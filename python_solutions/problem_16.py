@@ -21,6 +21,7 @@ What is the sum of the digits of the number 2^1000?
     print(desc, end="")
 
 pe_name = "POWER DIGIT SUM"
+pe_solution = 1366
 
 if __name__ == "__main__":
     print(main())

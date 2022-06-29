@@ -50,6 +50,7 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
     print(desc, end="")
 
 pe_name = "TRUNCATABLE PRIMES"
+pe_solution = 748317
 
 if __name__ == "__main__":
     print(main())

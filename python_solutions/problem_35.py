@@ -27,6 +27,7 @@ How many circular primes are there below one million?
     print(desc, end="")
 
 pe_name = "CIRCULAR PRIMES"
+pe_solution = 55
 
 if __name__ == "__main__":
     print(main())

@@ -33,6 +33,7 @@ What is the 10001st prime number?
     print(desc, end="")
 
 pe_name = "10001ST PRIME"
+pe_solution = 104743
 
 if __name__ == "__main__":
     print(main())

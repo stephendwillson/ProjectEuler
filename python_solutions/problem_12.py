@@ -51,6 +51,7 @@ What is the value of the first triangle number to have over five hundred divisor
     print(desc, end="")
 
 pe_name = "HIGHLY DIVISIBLE TRIANGULAR NUMBER"
+pe_solution = 76576500
 
 if __name__ == "__main__":
     print(main())

@@ -60,6 +60,7 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
     print(desc, end="")
 
 pe_name = "LARGEST PRODUCT IN A SERIES"
+pe_solution = 23514624000
 
 if __name__ == "__main__":
     print(main())

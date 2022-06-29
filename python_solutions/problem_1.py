@@ -20,6 +20,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
     print(desc, end="")
 
 pe_name = "MULTIPLES OF 3 OR 5"
+pe_solution = 233168
 
 if __name__ == "__main__":
     print(main())

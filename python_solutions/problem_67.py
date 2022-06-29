@@ -49,6 +49,7 @@ NOTE: This is a much more difficult version of Problem 18. It is not possible to
     print(desc, end="")
 
 pe_name = "MAXIMUM PATH SUM II"
+pe_solution = 7273
 
 if __name__ == "__main__":
     print(main())

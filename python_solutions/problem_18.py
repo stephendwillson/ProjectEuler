@@ -62,6 +62,7 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem by tr
     print(desc, end="")
 
 pe_name = "MAXIMUM PATH SUM I"
+pe_solution = 1074
 
 if __name__ == "__main__":
     print(main())

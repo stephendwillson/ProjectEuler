@@ -66,6 +66,7 @@ How many Sundays fell on the first of the month during the twentieth century (1 
     print(desc, end="")
 
 pe_name = "COUNTING SUNDAYS"
+pe_solution = 171
 
 if __name__ == "__main__":
     print(main())

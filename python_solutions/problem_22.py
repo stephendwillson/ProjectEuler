@@ -37,6 +37,7 @@ What is the total of all the name scores in the file?
     print(desc, end="")
 
 pe_name = "NAMES SCORES"
+pe_solution = 871198282
 
 if __name__ == "__main__":
     print(main())

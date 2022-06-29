@@ -56,6 +56,7 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
     print(desc, end="")
 
 pe_name = "DIGIT FIFTH POWERS"
+pe_solution = 443839
 
 if __name__ == "__main__":
     print(main())

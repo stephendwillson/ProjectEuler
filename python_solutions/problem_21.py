@@ -38,6 +38,7 @@ Evaluate the sum of all the amicable numbers under 10000.
     print(desc, end="")
 
 pe_name = "AMICABLE NUMBERS"
+pe_solution = 31626
 
 if __name__ == "__main__":
     print(main())

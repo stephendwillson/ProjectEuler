@@ -25,6 +25,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
     print(desc, end="")
 
 pe_name = "SMALLEST MULTIPLE"
+pe_solution = 232792560
 
 if __name__ == "__main__":
     print(main())

@@ -47,6 +47,7 @@ What is the index of the first term in the Fibonacci sequence to contain 1000 di
     print(desc, end="")
 
 pe_name = "1000-DIGIT FIBONACCI NUMBER"
+pe_solution = 4782
 
 if __name__ == "__main__":
     print(main())

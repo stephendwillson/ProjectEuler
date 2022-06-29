@@ -16,12 +16,14 @@ def main():
     verbose_help = "Prints description of specified problems."
     solve_help = "Solve the specified problems. Does not solve by default."
     timer_help = "Display time taken to calculate solution in seconds."
+    validate_help = "Raises ValueError if wrong solution is found."
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--problem", help=problem_help, nargs="+")
     parser.add_argument("-v", "--verbose", help=verbose_help, action="store_true")
     parser.add_argument("-s", "--solve", help=solve_help, action="store_true")
     parser.add_argument("-t", "--timer", help=timer_help, action="store_true")
+    parser.add_argument("--validate", help=validate_help, action="store_true")
 
     args = parser.parse_args()
 
@@ -32,17 +34,23 @@ def main():
             print_problem_info(problem)
         if args.solve:
             start_time = time.process_time()
-            solution = solve_problem(problem)
+            solution = solve_problem(problem, args.validate)
             end_time = time.process_time()
 
             print("{}: {}".format(pathlib.Path(problem).stem.upper().replace("_", " "), solution))
             if args.timer:
                 print("Time to solve: {0:.4f}s".format(end_time - start_time))
 
-def solve_problem(problem):
+def solve_problem(problem, validate):
 
     p_name = pathlib.Path(problem).stem
     p = importlib.import_module(p_name)
+
+    solution = p.main()
+
+    if validate:
+        if solution != p.pe_solution:
+            raise ValueError("WRONG SOLUTION! Expected {} Received {}".format(p.pe_solution, solution))
 
     return p.main()
 

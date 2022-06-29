@@ -30,6 +30,7 @@ Find the difference between the sum of the squares of the first one hundred natu
     print(desc, end="")
 
 pe_name = "SUM SQUARE DIFFERENCE"
+pe_solution = 25164150
 
 if __name__ == "__main__":
     print(main())

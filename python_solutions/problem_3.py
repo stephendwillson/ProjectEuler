@@ -21,6 +21,7 @@ What is the largest prime factor of the number 600851475143 ?
     print(desc, end="")
 
 pe_name = "LARGEST PRIME FACTOR"
+pe_solution = 6857
 
 if __name__ == "__main__":
     print(main())

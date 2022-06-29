@@ -113,6 +113,7 @@ What is the greatest product of four adjacent numbers in the same direction (up,
     print(desc, end="")
 
 pe_name = "LARGEST PRODUCT IN A GRID"
+pe_solution = 70600674
 
 if __name__ == "__main__":
     print(main())

@@ -26,6 +26,7 @@ Find the sum of all the primes below two million.
     print(desc, end="")
 
 pe_name = "SUMMATION OF PRIMES"
+pe_solution = 142913828922
 
 if __name__ == "__main__":
     print(main())
