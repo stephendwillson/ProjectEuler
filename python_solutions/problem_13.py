@@ -111,8 +111,7 @@ def main():
 
     n_digits = str(total)[0:n:]
 
-    print("total: {}".format(total))
-    print("first {} digits: {}".format(n, n_digits))
+    return n_digits
 
 def description():
 
@@ -222,6 +221,6 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 53503534226472524250874054075591789781264330331690
 """
     print(desc, end="")
-
+pe_name = "LARGE SUM"
 if __name__ == "__main__":
     main()

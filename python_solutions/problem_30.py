@@ -22,7 +22,7 @@ def main():
         if tmp == i:
             total += i
     
-    print("sum: {}".format(total))
+    return total
 
 # sum of digits_of_n ^ exp
 def digit_to_power(n, exp):
@@ -54,6 +54,6 @@ The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
 """
     print(desc, end="")
-
+pe_name = "DIGIT FIFTH POWERS"
 if __name__ == "__main__":
     main()

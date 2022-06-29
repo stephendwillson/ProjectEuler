@@ -9,7 +9,8 @@ def main():
     permutations.sort()
 
     nth_permutation = "".join(str(p) for p in permutations[n - 1])
-    print("permutation #{}: {}".format(n, nth_permutation))
+
+    return nth_permutation
 
 def description():
 
@@ -23,6 +24,6 @@ A permutation is an ordered arrangement of objects. For example, 3124 is one pos
 What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 """
     print(desc, end="")
-
+pe_name = "LEXICOGRAPHIC PERMUTATIONS"
 if __name__ == "__main__":
     main()

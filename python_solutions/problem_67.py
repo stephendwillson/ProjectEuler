@@ -13,8 +13,7 @@ def main():
     # convert everything to ints for euler_lib max path math
     t = get_int_grid(t)
 
-    total = euler_lib.get_triangle_max_path_sum(t)
-    print("triangle max path sum: {}".format(total))
+    return euler_lib.get_triangle_max_path_sum(t)
 
 def get_int_grid(t):
     
@@ -43,6 +42,6 @@ Find the maximum total from top to bottom in triangle.txt (right click and 'Save
 NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 2^99 altogether! If you could check one trillion (10^12) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
 """
     print(desc, end="")
-
+pe_name = "MAXIMUM PATH SUM II"
 if __name__ == "__main__":
     main()

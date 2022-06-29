@@ -41,7 +41,7 @@ def main():
                 else:
                     wd += 1
 
-    print("# sundays: {}".format(total))
+    return total
 
 def description():
 
@@ -64,6 +64,6 @@ You are given the following information, but you may prefer to do some research 
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 """
     print(desc, end="")
-
+pe_name = "COUNTING SUNDAYS"
 if __name__ == "__main__":
     main()

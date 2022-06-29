@@ -7,12 +7,7 @@ def main():
 
     num_primes = 10001
 
-    start_time = time.process_time()
-    prime = get_nth_prime(num_primes)
-    end_time = time.process_time()
-
-    print("time to calculate: {}".format(end_time - start_time))
-    print("Prime number #{}: {}".format(num_primes, prime))
+    return get_nth_prime(num_primes)
 
 def get_nth_prime(n):
     
@@ -36,6 +31,6 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 What is the 10001st prime number?
 """
     print(desc, end="")
-
+pe_name = "10001ST PRIME"
 if __name__ == "__main__":
     main()

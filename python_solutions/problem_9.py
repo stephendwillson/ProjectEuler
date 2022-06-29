@@ -8,9 +8,7 @@ def main():
     # convert list to int for math.prod
     triplet = [int(i) for i in triplet]
 
-    print("Pythagorean triplet satisfying a + b + c = 1000: {}".format(triplet))
-    print("Product of triplet is {}".format(math.prod(triplet)))
-
+    return math.prod(triplet)
 
 # square sum relation: (a^2 + b^2 = c^2) == (c^2 = m^4 + n^4 + 2*m^2*n^2)
 def get_triplet():
@@ -45,6 +43,6 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 """
     print(desc, end="")
-
+pe_name = "SPECIAL PYTHAGOREAN TRIPLET"
 if __name__ == "__main__":
     main()

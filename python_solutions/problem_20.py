@@ -10,8 +10,7 @@ def main():
     fact = math.factorial(n)
     digit_sum = euler_lib.sum_digits(fact)
     
-    print("{} factorial: {}".format(n, fact))
-    print("sum of digits: {}".format(digit_sum))
+    return digit_sum
 
 def description():
 
@@ -26,6 +25,6 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 Find the sum of the digits in the number 100!
 """
     print(desc, end="")
-
+pe_name = "FACTORIAL DIGIT SUM"
 if __name__ == "__main__":
     main()

@@ -9,9 +9,7 @@ def main():
     squared = euler_lib.square_of_sums(n)
     delta = squared - summed
 
-    print("Sum of squares: {}".format(summed))
-    print("Square of sums: {}".format(squared))
-    print("Delta: {} - {} = {}".format(squared, summed, delta))
+    return delta
 
 def description():
 
@@ -30,6 +28,6 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 """
     print(desc, end="")
-
+pe_name = "SUM SQUARE DIFFERENCE"
 if __name__ == "__main__":
     main()

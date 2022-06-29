@@ -22,7 +22,8 @@ def main():
     ]
 
     total = euler_lib.get_triangle_max_path_sum(t)
-    print("max path sum: {}".format(total))
+
+    return total
 
 def description():
 
@@ -59,6 +60,6 @@ Find the maximum total from top to bottom of the triangle below:
 NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
 """
     print(desc, end="")
-
+pe_name = "MAXIMUM PATH SUM I"
 if __name__ == "__main__":
     main()

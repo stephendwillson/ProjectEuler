@@ -9,8 +9,7 @@ def main():
 
     triangle, divisors = div(n)
 
-    print("triangle: {}".format(triangle))
-    print("number of divisors: {}".format(len(divisors)))
+    return triangle
 
 def div(n):
 
@@ -50,6 +49,6 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 """
     print(desc, end="")
-
+pe_name = "HIGHLY DIVISIBLE TRIANGULAR NUMBER"
 if __name__ == "__main__":
     main()

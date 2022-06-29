@@ -11,8 +11,8 @@ def main():
         i_b = bin(i).replace("0b", "")
         if euler_lib.is_palindrome(i) and euler_lib.is_palindrome(i_b):
             total += i
-
-    print("sum of all base 2/base 10 palindromes under {}: {}".format(n, total))
+    
+    return total
 
 def description():
 
@@ -26,6 +26,6 @@ Find the sum of all numbers, less than one million, which are palindromic in bas
 (Please note that the palindromic number, in either base, may not include leading zeros.)
 """
     print(desc, end="")
-
+pe_name = "DOUBLE-BASE PALINDROMES"
 if __name__ == "__main__":
     main()

@@ -9,7 +9,7 @@ def main():
             if str(prod) == str(prod)[::-1]:
                 palindromes.append(prod)
 
-    print("largest palindrome: {}".format(max(palindromes)))
+    return max(palindromes)
 
 def description():
 
@@ -21,6 +21,6 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
     print(desc, end="")
-
+pe_name = "LARGEST PALINDROME PRODUCT"
 if __name__ == "__main__":
     main()

@@ -32,7 +32,8 @@ def main():
         ]
 
     prod = get_highest_product(n - 1, grid)
-    print("highest product: {}".format(prod))
+    
+    return prod
 
 def get_highest_product(n, grid):
 
@@ -110,6 +111,6 @@ sdwillso NOTE: the highlighted numbers are [8][6] x [9][7] x [10][8] x [11][9]
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 """
     print(desc, end="")
-
+pe_name = "LARGEST PRODUCT IN A GRID"
 if __name__ == "__main__":
     main()

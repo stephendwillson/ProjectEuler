@@ -31,7 +31,7 @@ def main():
         if sums[i] == False:
             total += i
 
-    print("sum: {}".format(total))
+    return total
 
 def description():
 
@@ -47,6 +47,6 @@ As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest numb
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 """
     print(desc, end="")
-
+pe_name = "NON-ABUNDANT SUMS"
 if __name__ == "__main__":
     main()

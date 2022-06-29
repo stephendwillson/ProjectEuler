@@ -29,15 +29,15 @@ def main():
             print_problem_info(problem)
         if args.solve:
             solution = solve_problem(problem)
-            clean_name = pathlib.Path(problem).stem.upper().replace("_", " ")
-            print("{}: {}".format(clean_name, solution))
+
+            print("{}: {}".format(pathlib.Path(problem).stem.upper().replace("_", " "), solution))
 
 def solve_problem(problem):
 
-    solution = 0
-    # solve solve solve
+    p_name = pathlib.Path(problem).stem
+    p = importlib.import_module(p_name)
 
-    return solution
+    return p.main()
 
 def print_problem_info(problem):
 
@@ -45,10 +45,10 @@ def print_problem_info(problem):
 
     print("=" * 80)
 
-    p_name = pathlib.Path(problem).stem
-    print("{}".format(p_name.upper().replace("_", " ")))
-    
+    p_name = pathlib.Path(problem).stem 
     p = importlib.import_module(p_name)
+
+    print("{} - {}".format(p_name.upper().replace("_", " "), p.pe_name))
     p.description()
 
     print("=" * 80)
@@ -67,8 +67,6 @@ def build_problem_list(problem_args):
                 if file.startswith("problem") and file.endswith(".py"):
                     path = "{}/{}".format(script_dir, file)
                     p_list.append(path)
-        
-        return p_list
 
     else:
         for p in problem_args:
@@ -77,6 +75,8 @@ def build_problem_list(problem_args):
             if os.path.exists(path):
                 p_list.append(path)
 
-        return p_list
+    # "magic" - sort file names by problem number
+    p_list.sort(key=lambda f: int("".join(filter(str.isdigit, f))))
+    return p_list
 
 main()

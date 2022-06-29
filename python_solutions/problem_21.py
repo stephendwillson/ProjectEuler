@@ -20,8 +20,8 @@ def main():
         if a_sum == b and b_sum == a and a != b:
             amicables.append(a)
             amicables.append(b)
-
-    print("sum of amicable #s below {}: {}".format(n, sum(amicables)))
+    
+    return sum(amicables)
 
 def description():
 
@@ -36,6 +36,6 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 a
 Evaluate the sum of all the amicable numbers under 10000.
 """
     print(desc, end="")
-
+pe_name = "AMICABLE NUMBERS"
 if __name__ == "__main__":
     main()

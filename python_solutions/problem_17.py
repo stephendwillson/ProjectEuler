@@ -39,7 +39,7 @@ def main():
     for i in range(1, n + 1):
         word += parse(str(i))
 
-    print("letter count 1-{}: {}".format(n, len(word)))
+    return len(word)
 
 def parse(n):
 
@@ -110,6 +110,6 @@ If all the numbers from 1 to 1000 (one thousand) inclusive were written out in w
 NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
 """
     print(desc, end="")
-
+pe_name = "NUMBER LETTER COUNTS"
 if __name__ == "__main__":
     main()

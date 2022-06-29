@@ -11,8 +11,8 @@ def main():
     for i in range(3, ceiling + 1, 2):
         if euler_lib.is_prime(i):
             total += i
-
-    print("sum of primes below {}: {}".format(ceiling, total))
+    
+    return total
 
 def description():
 
@@ -24,6 +24,6 @@ The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 Find the sum of all the primes below two million.
 """
     print(desc, end="")
-
+pe_name = "SUMMATION OF PRIMES"
 if __name__ == "__main__":
     main()
