@@ -52,7 +52,7 @@ def solve_problem(problem, validate):
         if solution != p.pe_solution:
             raise ValueError("WRONG SOLUTION! Expected {} Received {}".format(p.pe_solution, solution))
 
-    return p.main()
+    return solution
 
 def print_problem_info(problem):
 
