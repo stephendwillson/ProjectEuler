@@ -102,24 +102,6 @@ def sum_digits(n):
 
     return total
 
-# get length of longest collatz sequence
-# n -> n/2 (n is even)
-# n -> 3n + 1 (n is odd)
-# reduce to 1, counting steps to get there
-def get_collatz_length(n):
-    
-    length = 1 
-
-    while n > 1: 
-        if n % 2 == 0:
-            n = n/2
-        else: 
-            n = 3*n + 1
-
-        length += 1
-
-    return length
-
 # 1 + 2 + ... + n-1 + n
 def get_triangle_number(n):
 

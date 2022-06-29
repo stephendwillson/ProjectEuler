@@ -3,20 +3,38 @@ import euler_lib
 
 def main():
     
-    n = 1000000
+    ceiling = 1000000
 
-    longest = 0
-    start_num = 0
+    # naive approach took too long, so now cache collatz lengths
+    lengths = [0] * ceiling
 
-    for i in range(1, n + 1):
-        
-        tmp = euler_lib.get_collatz_length(i)
+    for origin in range(1, ceiling + 1):
 
-        if tmp > longest:
-            longest = tmp
-            start_num = i
+        n = origin
+        length = 0
+        while True:
+            
+            # if no cache hit found, update cache
+            if n == 1:
+                lengths[origin-1] = length
+                break
 
-    return start_num
+            # if cache hit found, stop calc and update cache
+            if n <= len(lengths) and lengths[n-1] != 0:
+                lengths[origin-1] = lengths[n-1] + length
+                break            
+
+            # collatz
+            if n % 2 == 0:
+                n = n//2
+            else:
+                n = 3*n + 1
+
+            length += 1
+
+    highest = lengths.index(max(lengths)) + 1
+
+    return highest
 
 def description():
 
