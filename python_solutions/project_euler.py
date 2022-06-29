@@ -14,11 +14,13 @@ def main():
     problem_help = "Space-separated list of problems. Chooses ALL problems if none are specified."
     verbose_help = "Prints description of specified problems."
     solve_help = "Solve the specified problems. Does not solve by default."
+    timer_help = "Display time taken to calculate solution in seconds."
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--problem", help=problem_help, nargs="+")
     parser.add_argument("-v", "--verbose", help=verbose_help, action="store_true")
     parser.add_argument("-s", "--solve", help=solve_help, action="store_true")
+    parser.add_argument("-t", "--timer", help=timer_help, action="store_true")
 
     args = parser.parse_args()
 
@@ -28,9 +30,13 @@ def main():
         if args.verbose:
             print_problem_info(problem)
         if args.solve:
+            start_time = time.process_time()
             solution = solve_problem(problem)
+            end_time = time.process_time()
 
             print("{}: {}".format(pathlib.Path(problem).stem.upper().replace("_", " "), solution))
+            if args.timer:
+                print("Time to solve: {0:.4f}s".format(end_time - start_time))
 
 def solve_problem(problem):
 
