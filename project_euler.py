@@ -29,17 +29,38 @@ def main():
 
     problems = build_problem_list(args.problem)
     
+    slowest = 0
+    slowest_name = ""
+
+    overall_time = 0
+
     for problem in problems:
         if args.verbose:
             print_problem_info(problem)
         if args.solve:
+
             start_time = time.process_time()
             solution = solve_problem(problem, args.validate)
             end_time = time.process_time()
+            total_time = end_time - start_time
+            overall_time += total_time
 
-            print("{}: {}".format(pathlib.Path(problem).stem.upper().replace("_", " "), solution))
+            tidy_problem_name = pathlib.Path(problem).stem.upper().replace("_", " ")
+
+            if total_time > slowest:
+                slowest = total_time
+                slowest_name = tidy_problem_name
+
+            print("{}: {}".format(tidy_problem_name, solution))
+            
             if args.timer:
                 print("Time to solve: {0:.4f}s".format(end_time - start_time))
+
+    if args.timer:
+        print()
+        print("Slowest problem to solve: {}".format(slowest_name))
+        print("Time to solve: {0:.2f}s".format(slowest))
+        print("Time for all solutions: {0:.2f}s".format(overall_time))
 
 def solve_problem(problem, validate):
 
