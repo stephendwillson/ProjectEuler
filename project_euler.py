@@ -4,7 +4,6 @@ Run Project Euler problem solver scripts
 
 import time
 import argparse
-import subprocess
 import os
 import sys
 import importlib
@@ -34,10 +33,13 @@ def main():
 
     overall_time = 0
 
+    problem_count = 0
+
     for problem in problems:
         if args.verbose:
             print_problem_info(problem)
         if args.solve:
+            problem_count += 1
 
             start_time = time.process_time()
             solution = solve_problem(problem, args.validate)
@@ -55,11 +57,13 @@ def main():
             
             if args.timer:
                 print("Time to solve: {0:.4f}s".format(end_time - start_time))
+                print()
 
     if args.timer:
         print()
+        print("Number of problems solved: {}".format(problem_count))
         print("Slowest problem to solve: {}".format(slowest_name))
-        print("Time to solve: {0:.2f}s".format(slowest))
+        print("Time to solve {0}: {1:.2f}s".format(slowest_name, slowest))
         print("Time for all solutions: {0:.2f}s".format(overall_time))
 
 def solve_problem(problem, validate):
