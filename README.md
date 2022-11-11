@@ -2,7 +2,8 @@
 Project Euler solutions and a driver to run them. The goal is to refresh and maintain Python skills.
 
 
-# `project_euler.py` Usage
+# Usage
+## `project_euler.py` Driver Script
 Solutions can be run standalone or using the driver, project_euler.py.
 
 **NOTE:** the driver does not solve by default. The -s | --solve argument must be passed.
@@ -29,12 +30,6 @@ Supported arguments:
                     Space-separated list of problems.
                     Chooses ALL problems if none are
                     specified.
-```
-
-## Standalone
-```
-$ python python_solutions/problem_23.py 
-1234567890
 ```
 
 ## Example Driver Usage
@@ -77,6 +72,13 @@ Slowest problem to solve:
 Time to solve : 0.00s
 Time for all solutions: 0.00s
 ```
+
+## Standalone
+```
+$ python python_solutions/problem_23.py 
+1234567890
+```
+
 # `euler_lib.py` Common Library
 Functions that are likely to show up repeatedly like hunting for prime numbers should live in `euler_lib.py`.
 
