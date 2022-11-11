@@ -188,3 +188,27 @@ def get_prime_factors(n):
             c += 1
 
     return p_factors
+
+# get recurring cycle in the decimal for 'numerator / denominator' if one exists, otherwise return None
+def get_recurring_decimal_cycle(numerator, denominator):
+    
+    repeat = ""
+
+    # remainder dictionary --> {remainder : position}
+    rem_dict = {}
+
+    # if remainder ever hits 0, there's no cycle
+    remainder = numerator % denominator
+    while(remainder != 0 and remainder not in rem_dict):
+
+        rem_dict[remainder] = len(repeat)
+
+        remainder *= 10
+        repeat += str(remainder // denominator)
+
+        remainder %= denominator
+
+    if(remainder == 0):
+        return None
+    else:
+        return repeat[rem_dict[remainder]:]
