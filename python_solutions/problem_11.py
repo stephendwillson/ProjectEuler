@@ -82,7 +82,7 @@ def description():
     desc = """
 https://projecteuler.net/problem=11
 
-In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+In the 20x20 grid below, four numbers along a diagonal line have been marked in red.
 
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -105,10 +105,10 @@ In the 20×20 grid below, four numbers along a diagonal line have been marked in
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 
-The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+The product of these numbers is 26 x 63 x 78 x 14 = 1788696.
 sdwillso NOTE: the highlighted numbers are [8][6] x [9][7] x [10][8] x [11][9]
 
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
+What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20x20 grid?
 """
     print(desc, end="")
 

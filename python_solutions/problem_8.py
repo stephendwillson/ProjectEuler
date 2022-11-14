@@ -15,7 +15,7 @@ def main():
         
         # grab N adjacent digits and stuff into list
         for j in range(0, adj_digits):
-            tmp_digits.append(n[i + j])
+            tmp_digits.append(n[i + j])  # type: ignore
         
         # convert back to int for math.prod
         tmp_digits = [int(i) for i in tmp_digits]
@@ -32,7 +32,7 @@ def description():
     desc = """
 https://projecteuler.net/problem=8
 
-The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+The four adjacent digits in the 1000-digit number that have the greatest product are 9 x 9 x 8 x 9 = 5832.
 
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843

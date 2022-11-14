@@ -34,7 +34,6 @@ def main():
                 
                 if week[wd] == "Sunday" and day == 1:
                     total += 1
-                    # print("{} {} {} {}".format(week[wd], month, day, year))
                 
                 if wd == 6:
                     wd = 0

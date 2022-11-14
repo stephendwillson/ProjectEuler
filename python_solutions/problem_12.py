@@ -14,6 +14,7 @@ def main():
 def div(n):
 
     divisors = list()
+    triangle = None
     tmp = 0
 
     i = 0

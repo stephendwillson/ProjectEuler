@@ -26,7 +26,7 @@ It can be seen that the 12th digit of the fractional part is 1.
 
 If d(n) represents the nth digit of the fractional part, find the value of the following expression.
 
-d(1) × d(10) × d(100) × d(1000) × d(10000) × d(100000) × d(1000000)
+d(1) x d(10) x d(100) x d(1000) x d(10000) x d(100000) x d(1000000)
 """
     print(desc, end="")
 

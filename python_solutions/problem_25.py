@@ -23,7 +23,7 @@ https://projecteuler.net/problem=25
 
 The Fibonacci sequence is defined by the recurrence relation:
 
-    F(n) = F(n−1) + F(n−2), where F(1) = 1 and F(2) = 1.
+    F(n) = F(n-1) + F(n-2), where F(1) = 1 and F(2) = 1.
 
 Hence the first 12 terms will be:
 
