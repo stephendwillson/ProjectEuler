@@ -212,3 +212,13 @@ def get_recurring_decimal_cycle(numerator, denominator):
         return None
     else:
         return repeat[rem_dict[remainder]:]
+
+# given a list of coin denominations, find the number of coin combos that add up to target
+def num_coin_combos(coins, target):
+
+    if target < 0 or len(coins) <= 0:
+        return 0
+    if target == 0:
+        return 1
+    
+    return num_coin_combos(coins[:-1], target) + num_coin_combos(coins, target - coins[-1])
