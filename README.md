@@ -93,7 +93,10 @@ Any extra material required for a problem such as the list of names provided wit
 # Adding Solutions
 - Solution scripts are expected to be in the `python_solutions` directory.
 - Solution scripts are expected to have a `main()` function that returns the problem solution.
-- Solution scripts are expected to have several fields including a description function, a problem name, and a solution.
+- Solution scripts are expected to have several fields:
+  - A description function, `def description()`
+  - A problem name, `pe_name`
+  - A solution, `pe_solution`
 - The `pe_solution` variable is intended to be manually set only after the actual solution is found. It should be used as a sanity check when changes to a solution for efficiency, etc. are made. This means passing the `--validate` flag **should** cause a `ValueError` to be raised for solutions still under development.
 - A directive should be added to allow running standalone in addition to driver-initiated:
 ```python
