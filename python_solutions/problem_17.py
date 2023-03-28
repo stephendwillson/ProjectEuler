@@ -31,6 +31,7 @@ nums = {
     "90": "ninety"
 }
 
+
 def main():
 
     n = 1000
@@ -41,23 +42,24 @@ def main():
 
     return len(word)
 
+
 def parse(n):
 
     # 0-9
     if len(n) == 1:
         return nums[n]
-    
+
     # 10-99
-    elif len(n) == 2:
+    if len(n) == 2:
         return get_tens(n)
-    
+
     # 100-999
-    elif len(n) == 3:
+    if len(n) == 3:
         return get_hundreds(n)
-    
+
     # 1000
-    else:
-        return "{}{}".format(nums[n[0]], "thousand")
+    return f"{nums[n[0]]}thousand"
+
 
 def get_tens(n):
 
@@ -68,19 +70,19 @@ def get_tens(n):
     # 1-19
     if int(n) < 20:
         return nums[n]
-    
+
     # 20, 30, ... , 80, 90
-    elif int(n) % 10 == 0:
+    if int(n) % 10 == 0:
         return nums[n]
-    
+
     # x != 0: 2x, 3x, ... , 8x, 9x
-    else:
-        tens = str(math.floor(int(n) / 10) * 10)
+    tens = str(math.floor(int(n) / 10) * 10)
 
-        tens = nums[tens]
-        ones = nums[n[-1]]
+    tens = nums[tens]
+    ones = nums[n[-1]]
 
-        return "{}{}".format(tens, ones)
+    return f"{tens}{ones}"
+
 
 def get_hundreds(n):
 
@@ -90,29 +92,35 @@ def get_hundreds(n):
 
     # 100, 200, ... , 800, 900
     if int(n) % 100 == 0:
-        return "{}{}".format(nums[n[0]], "hundred")
-    
-    # 101, 102, ... 989, 999
-    else:
-        tens = get_tens(n[-2:])
+        return f"{nums[n[0]]}hundred"
 
-        return "{}{}".format(nums[n[0]] + "hundredand", tens)
+    # 101, 102, ... 989, 999
+    tens = get_tens(n[-2:])
+
+    return f"{nums[n[0]]}hundredand{tens}"
+
 
 def description():
 
     desc = """
 https://projecteuler.net/problem=17
 
-If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+If the numbers 1 to 5 are written out in words: one, two, three, four, five,
+then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
 
-If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+If all the numbers from 1 to 1000 (one thousand) inclusive were written out in
+words, how many letters would be used?
 
-NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and
+forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20
+letters. The use of "and" when writing out numbers is in compliance with
+British usage.
 """
     print(desc, end="")
 
-pe_name = "NUMBER LETTER COUNTS"
-pe_solution = 21124
+
+PE_NAME = "NUMBER LETTER COUNTS"
+PE_SOLUTION = 21124
 
 if __name__ == "__main__":
     print(main())

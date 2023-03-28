@@ -103,22 +103,24 @@ def main():
             53503534226472524250874054075591789781264330331690
     ]
 
-    n = 10 # first n digits of sum
+    n = 10  # first n digits of sum
     total = 0
 
-    for i in range(0, len(addends)):
-        total += addends[i]
+    for addend in addends:
+        total += addend
 
     n_digits = int(str(total)[0:n:])
 
     return n_digits
+
 
 def description():
 
     desc = """
 https://projecteuler.net/problem=13
 
-Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+Work out the first ten digits of the sum of the following one-hundred
+50-digit numbers.
 37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
@@ -222,8 +224,9 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 """
     print(desc, end="")
 
-pe_name = "LARGE SUM"
-pe_solution = 5537376230
+
+PE_NAME = "LARGE SUM"
+PE_SOLUTION = 5537376230
 
 if __name__ == "__main__":
     print(main())

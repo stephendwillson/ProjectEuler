@@ -9,12 +9,14 @@ def main():
 
     return coin_combos
 
+
 def description():
 
     desc = """
 https://projecteuler.net/problem=31
 
-In the United Kingdom the currency is made up of pound (£) and pence (p). There are eight coins in general circulation:
+In the United Kingdom the currency is made up of pound (£) and pence (p).
+There are eight coins in general circulation:
 
     1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p).
 
@@ -27,8 +29,9 @@ How many different ways can £2 be made using any number of coins?
 """
     print(desc, end="")
 
-pe_name = "COIN SUMS"
-pe_solution = 73682
+
+PE_NAME = "COIN SUMS"
+PE_SOLUTION = 73682
 
 if __name__ == "__main__":
     print(main())

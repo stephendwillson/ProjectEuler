@@ -1,5 +1,5 @@
 import math
-import time
+
 
 def main():
 
@@ -10,8 +10,11 @@ def main():
 
     return math.prod(triplet)
 
-# square sum relation: (a^2 + b^2 = c^2) == (c^2 = m^4 + n^4 + 2*m^2*n^2)
+
 def get_triplet():
+    """
+    Square sum relation: (a^2 + b^2 = c^2) == (c^2 = m^4 + n^4 + 2*m^2*n^2)
+    """
 
     c = 0
     m = 0
@@ -27,7 +30,8 @@ def get_triplet():
 
         m += 1
 
-    return None
+    # return None
+
 
 def description():
 
@@ -44,8 +48,9 @@ Find the product abc.
 """
     print(desc, end="")
 
-pe_name = "SPECIAL PYTHAGOREAN TRIPLET"
-pe_solution = 31875000
+
+PE_NAME = "SPECIAL PYTHAGOREAN TRIPLET"
+PE_SOLUTION = 31875000
 
 if __name__ == "__main__":
     print(main())

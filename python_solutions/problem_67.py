@@ -5,12 +5,15 @@ import euler_lib
 
 def main():
 
-    t = list()
+    t = []
 
+    supplemental_dir = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
+        "supplemental")
 
-    supplemental_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "supplemental")
     filepath = os.path.join(supplemental_dir, "p67_triangle.txt")
-    with open(filepath) as f:
+
+    with open(filepath, encoding='utf-8') as f:
         t_lines = f.readlines()
         for line in t_lines:
             t.append(line.split())
@@ -20,20 +23,23 @@ def main():
 
     return euler_lib.get_triangle_max_path_sum(t)
 
+
 def get_int_grid(t):
-    
-    tmp = list()
+
+    tmp = []
     for line in t:
         tmp.append(list(map(int, line)))
 
     return tmp
+
 
 def description():
 
     desc = """
 https://projecteuler.net/problem=67
 
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+By starting at the top of the triangle below and moving to adjacent numbers on
+the row below, the maximum total from top to bottom is 23.
 
 3
 7 4
@@ -42,14 +48,21 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
 
 That is, 3 + 7 + 4 + 9 = 23.
 
-Find the maximum total from top to bottom in triangle.txt (right click and 'Save Link/Target As...'), a 15K text file containing a triangle with one-hundred rows.
+Find the maximum total from top to bottom in triangle.txt (right click and
+'Save Link/Target As...'), a 15K text file containing a triangle with
+one-hundred rows.
 
-NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 2^99 altogether! If you could check one trillion (10^12) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
+NOTE: This is a much more difficult version of Problem 18. It is not possible
+to try every route to solve this problem, as there are 2^99 altogether!
+If you could check one trillion (10^12) routes every second it would take over
+twenty billion years to check them all. There is an efficient algorithm to
+solve it. ;o)
 """
     print(desc, end="")
 
-pe_name = "MAXIMUM PATH SUM II"
-pe_solution = 7273
+
+PE_NAME = "MAXIMUM PATH SUM II"
+PE_SOLUTION = 7273
 
 if __name__ == "__main__":
     print(main())

@@ -3,11 +3,12 @@ import euler_lib
 
 def main():
 
-    n = 1000 # 2^n
+    n = 1000  # 2^n
 
     total = euler_lib.sum_digits(2 ** n)
 
     return total
+
 
 def description():
 
@@ -20,8 +21,9 @@ What is the sum of the digits of the number 2^1000?
 """
     print(desc, end="")
 
-pe_name = "POWER DIGIT SUM"
-pe_solution = 1366
+
+PE_NAME = "POWER DIGIT SUM"
+PE_SOLUTION = 1366
 
 if __name__ == "__main__":
     print(main())

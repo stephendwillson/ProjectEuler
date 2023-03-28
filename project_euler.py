@@ -11,8 +11,7 @@ import pathlib
 
 
 def main():
-    """Entry point."""
-
+    # pylint: disable=too-many-locals
     problem_help_text = \
         "Space-separated list of problems. " \
         "Chooses ALL problems if none are specified."
@@ -78,6 +77,8 @@ def main():
         print(f"Time to solve {slowest_name}: {slowest:.2f}s")
         print(f"Time for all solutions: {overall_time:.2f}s")
 
+    # pylint: enable=too-many-locals
+
 
 def solve_problem(problem, validate):
     """
@@ -97,10 +98,10 @@ def solve_problem(problem, validate):
     solution = problem_script.main()
 
     if validate:
-        if solution != problem_script.pe_solution:
+        if solution != problem_script.PE_SOLUTION:
             raise ValueError(
                 "WRONG SOLUTION!\n"
-                f"Expected {problem_script.pe_solution}\n"
+                f"Expected {problem_script.PE_SOLUTION}\n"
                 f"Received {solution}"
                 )
 
@@ -115,16 +116,16 @@ def print_problem_info(problem):
     :type problem: int
     """
 
-    print("=" * 80)
+    print("=" * 79)
 
     problem_name = pathlib.Path(problem).stem
     problem_script = importlib.import_module(problem_name)
 
     print(
-        f"{problem_name.upper().replace('_', ' ')} - {problem_script.pe_name}")
+        f"{problem_name.upper().replace('_', ' ')} - {problem_script.PE_NAME}")
     problem_script.description()
 
-    print("=" * 80)
+    print("=" * 79)
     print()
 
 

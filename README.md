@@ -95,9 +95,9 @@ Any extra material required for a problem such as the list of names provided wit
 - Solution scripts are expected to have a `main()` function that returns the problem solution.
 - Solution scripts are expected to have several fields:
   - A description function, `def description()`
-  - A problem name, `pe_name`
-  - A solution, `pe_solution`
-- The `pe_solution` variable is intended to be manually set only after the actual solution is found. It should be used as a sanity check when changes to a solution for efficiency, etc. are made. This means passing the `--validate` flag **should** cause a `ValueError` to be raised for solutions still under development.
+  - A problem name, `PE_NAME`
+  - A solution, `PE_SOLUTION`
+- The `PE_SOLUTION` variable is intended to be manually set only after the actual solution is found. It should be used as a sanity check when changes to a solution for efficiency, etc. are made. This means passing the `--validate` flag **should** cause a `ValueError` to be raised for solutions still under development.
 - A directive should be added to allow running standalone in addition to driver-initiated:
 ```python
 if __name__ == "__main__":
@@ -114,6 +114,7 @@ def main():
 
     return -1
 
+
 def description():
 
     desc = """
@@ -123,8 +124,8 @@ The descriptive text of the problem from the Project Euler site goes here.
 """
     print(desc, end="")
 
-pe_name = "PROBLEM NAME"
-pe_solution = 0
+PE_NAME = "PROBLEM NAME"
+PE_SOLUTION = 0
 
 if __name__ == "__main__":
     print(main())
