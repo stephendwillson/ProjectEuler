@@ -3,54 +3,18 @@ import math
 
 def main():
 
-    # pre-calc factorial values for each digit
-    fact = get_digit_factorials()
+    # https://en.wikipedia.org/wiki/Factorion
 
-    # need an upper bound. started by blindly picking 1000000 and it worked.
-
-    # tightened further: https://en.wikipedia.org/wiki/Factorion
-
-    # biggest 7 digit number 9999999 has 7 digit factorial sum much less than
-    # self
-    # biggest 8 digit number 99999999 still has 7 digit factorial sum
-    # 7 * 9! = 2540160
-    # 8 * 9! = 2903040
-
-    # any higher than 7 digits is going to have a sum factorials < self
-    ceiling = 7 * fact[9]
+    # must be smaller than 9999999, sum(factorial of digits of 7*9!) = 2540160
+    # pre-calculate factorials for 1-9 to save repeated calculations
+    factorials = [math.factorial(i) for i in range(10)]
+    ceiling = 7 * factorials[9]
 
     total = 0
     for i in range(3, ceiling):
-        if i == digit_factorial_sum(i, fact):
+
+        if sum(factorials[int(digit)] for digit in str(i)) == i:
             total += i
-
-    return total
-
-
-def get_digit_factorials():
-    """Calculate factorials in advance to save time on repeated maths."""
-
-    return [
-            math.factorial(0),
-            math.factorial(1),
-            math.factorial(2),
-            math.factorial(3),
-            math.factorial(4),
-            math.factorial(5),
-            math.factorial(6),
-            math.factorial(7),
-            math.factorial(8),
-            math.factorial(9)
-            ]
-
-
-def digit_factorial_sum(n, fact):
-    """Calculate sum of digits_of_n!."""
-
-    total = 0
-
-    for i in range(0, len(str(n))):
-        total += fact[int(str(n)[i])]
 
     return total
 

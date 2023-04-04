@@ -2,11 +2,15 @@ def main():
 
     ceiling = 1000000
 
-    d = ""
+    # starting with a list and converting to string afterward runs
+    # significantly faster than if we begin with a string
+    d = []
     i = 0
     while len(d) < ceiling:
         i += 1
-        d = d + str(i)
+        d.append(str(i))
+
+    d = ''.join(d)
 
     total = (
         int(d[0])

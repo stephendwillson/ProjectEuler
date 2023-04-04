@@ -7,6 +7,7 @@ import math
 import string
 import collections
 import itertools
+import random
 
 
 def is_palindrome(s):
@@ -97,11 +98,7 @@ def get_triangle_number(n):
     :rtype: int
     """
 
-    triangle = 0
-    for i in range(1, n + 1):
-        triangle += i
-
-    return triangle
+    return n * (n + 1) / 2
 
 
 def sum_of_squares(n):
@@ -136,26 +133,43 @@ def square_of_sums(n):
     return total * total
 
 
-# get all factors, not just prime etc.
+def get_number_of_factors(n):
+    """
+    Find only the number of factors of a given number. Saves some time over
+    getting a list of all factors.
+
+    :type n: int
+    :rtype: int
+    """
+
+    factors = get_prime_factors(n)
+
+    factor_count = {}
+    for factor in factors:
+        factor_count[factor] = factor_count.get(factor, 0) + 1
+
+    num_f = 1
+    for count in factor_count.values():
+        num_f *= (count + 1)
+
+    return num_f
+
+
 def get_factors(n):
     """
     Find all factors of a number.
 
     :type n: int
-    :rtype: int array
+    :rtype: int list
     """
 
-    factors = []
+    factors = set()
 
-    if n <= 1:
-        return factors
+    for i in range(1, int(math.sqrt(n)) + 1):
 
-    for i in range(1, math.floor(math.sqrt(n)) + 1):
         if n % i == 0:
-            factors.append(i)
-
-            if n / i != i:
-                factors.append(math.floor(n / i))
+            factors.add(i)
+            factors.add(n // i)
 
     return factors
 
@@ -200,23 +214,67 @@ def get_prime_factors(n):
 
 def is_prime(n):
     """
-    Test if a number is prime.
+    Test if a number is prime using the AKS (Agrawal-Kayal-Saxena) test.
 
+    :param n: Number to be tested
     :type n: int
     :rtype: bool
     """
 
-    # handle 1, 2, and all even numbers
     if n <= 1:
         return False
-    if n == 2:
+    if n <= 3:
         return True
-    if n % 2 == 0:
+    if n % 2 == 0 or n % 3 == 0:
         return False
 
-    # odd numbers
-    for i in range(3, 1 + math.floor(math.sqrt(n)), 2):
-        if n % i == 0:
+    r = 5
+    while r * r <= n:
+        if n % r == 0 or n % (r + 2) == 0:
+            return False
+        r += 6
+    return True
+
+
+def is_prime_fast(n, k=4):
+    """
+    Test if a number is prime using Miller-Rabin primality test.
+    This is a faster test but because it is probabalistic, there's a chance
+    of some janky math with larger numbers.
+
+    :param n: Number to be tested
+    :type n: int
+    :param k: Number of iterations. Higher values == more acc. Defaults to 4
+    :type k: int, optional
+    :rtype: bool
+    """
+
+    if n in (2, 3):
+        return True
+    if n < 2 or n % 2 == 0:
+        return False
+
+    # Find r and d such that n = 2^r * d + 1
+    r = 0
+    d = n - 1
+    while d % 2 == 0:
+        r += 1
+        d //= 2
+
+    # k iterations of Miller-Rabin test
+    for _ in range(k):
+        a = random.randint(2, n - 2)
+        x = pow(a, d, n)
+
+        if x in (1, n - 1):
+            continue
+
+        for _ in range(r - 1):
+
+            x = pow(x, 2, n)
+            if x == n - 1:
+                break
+        else:
             return False
 
     return True

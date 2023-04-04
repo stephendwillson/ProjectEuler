@@ -5,24 +5,24 @@ def main():
 
     n = 500
 
-    triangle, _ = div(n)
+    triangle = div(n)
 
     return triangle
 
 
 def div(n):
 
-    divisors = []
-    triangle = None
+    divisors = 0
+    triangle = 0
 
     i = 0
-    while len(divisors) < n:
+    while divisors < n:
         i += 1
 
         triangle = euler_lib.get_triangle_number(i)
-        divisors = euler_lib.get_factors(triangle)
+        divisors = euler_lib.get_number_of_factors(triangle)
 
-    return triangle, divisors
+    return triangle
 
 
 def description():
