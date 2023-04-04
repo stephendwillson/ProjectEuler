@@ -236,7 +236,7 @@ def is_prime(n):
     return True
 
 
-def is_prime_fast(n, k=4):
+def is_prime_fast(n, k=5):
     """
     Test if a number is prime using Miller-Rabin primality test.
     This is a faster test but because it is probabalistic, there's a chance
@@ -244,7 +244,7 @@ def is_prime_fast(n, k=4):
 
     :param n: Number to be tested
     :type n: int
-    :param k: Number of iterations. Higher values == more acc. Defaults to 4
+    :param k: Number of iterations. Higher values == more acc. Defaults to 5
     :type k: int, optional
     :rtype: bool
     """
@@ -301,7 +301,29 @@ def is_circular_prime(n):
     return True
 
 
-# get_triangle_max_path_sum
+def get_primes_below_n(ceiling):
+    """
+    Get a list of all primes below the value of ceiling.
+    Uses sieve of Eratosthenes.
+
+    :param ceiling: Upper limit for prime search
+    :type ceiling: int
+    :return: Every prime below n
+    :rtype: list of ints
+    """
+
+    # init empty list
+    sieve = [True] * (ceiling + 1)
+    sieve[0] = sieve[1] = False
+
+    for i in range(2, int(math.sqrt(ceiling)) + 1):
+
+        if sieve[i]:
+            sieve[i*i::i] = [False] * ((ceiling - i*i) // i + 1)
+
+    return [i for i in range(ceiling + 1) if sieve[i]]
+
+
 def get_triangle_max_path_sum(t):
     """
     Find the sum of the vertical path through a number triangle with the

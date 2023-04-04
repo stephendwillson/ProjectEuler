@@ -4,13 +4,10 @@ import euler_lib
 def main():
 
     ceiling = 2000000
-    total = 2  # skip 2, only prime check odd #s
 
-    for i in range(3, ceiling + 1, 2):
-        if euler_lib.is_prime(i):
-            total += i
+    primes = euler_lib.get_primes_below_n(ceiling)
 
-    return total
+    return sum(primes)
 
 
 def description():
