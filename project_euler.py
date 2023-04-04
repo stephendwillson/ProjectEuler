@@ -10,8 +10,9 @@ import importlib
 import pathlib
 
 
+# pylint: disable=too-many-locals
 def main():
-    # pylint: disable=too-many-locals
+
     problem_help_text = \
         "Space-separated list of problems. " \
         "Chooses ALL problems if none are specified."
@@ -77,7 +78,7 @@ def main():
         print(f"Time to solve {slowest_name}: {slowest:.2f}s")
         print(f"Time for all solutions: {overall_time:.2f}s")
 
-    # pylint: enable=too-many-locals
+# pylint: enable=too-many-locals
 
 
 def solve_problem(problem, validate):
@@ -130,12 +131,13 @@ def print_problem_info(problem):
 
 
 def build_problem_list(problem_args):
-    """build_problem_list _summary_
+    """
+    Build a list of paths of problem scripts to run.
 
-    :param problem_args: _description_
-    :type problem_args: _type_
-    :return: _description_
-    :rtype: int array
+    :param problem_args: -p command line params
+    :type problem_args: list
+    :return: List of paths of problem scripts to run
+    :rtype: int list
     """
 
     p_list = []
