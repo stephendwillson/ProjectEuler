@@ -3,20 +3,13 @@ import euler_lib
 
 def main():
 
-    n = 500
-
-    triangle = div(n)
-
-    return triangle
-
-
-def div(n):
+    target = 500
 
     divisors = 0
     triangle = 0
 
     i = 0
-    while divisors < n:
+    while divisors < target:
         i += 1
 
         triangle = euler_lib.get_triangle_number(i)

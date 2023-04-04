@@ -147,24 +147,35 @@ def get_least_common_multiple(a, b):
 
 def get_number_of_factors(n):
     """
-    Find only the number of factors of a given number. Saves some time over
-    getting a list of all factors.
+    Find only the number of factors of a given number via prime factorization.
+    Saves some time over getting a list of all factors and counting elements.
 
     :type n: int
     :rtype: int
     """
 
-    factors = get_prime_factors(n)
+    prime_factors = get_prime_factors(n)
 
-    factor_count = {}
-    for factor in factors:
-        factor_count[factor] = factor_count.get(factor, 0) + 1
+    num_factors = 1
+    prev_factor = None
+    factor_count = 0
 
-    num_f = 1
-    for count in factor_count.values():
-        num_f *= (count + 1)
+    # Calculate number of factors using prime factorization
+    for factor in prime_factors:
 
-    return num_f
+        if prev_factor is None:
+            prev_factor = factor
+            factor_count = 1
+        elif prev_factor == factor:
+            factor_count += 1
+        else:
+            num_factors *= (factor_count + 1)
+            prev_factor = factor
+            factor_count = 1
+
+    num_factors *= (factor_count + 1)
+
+    return num_factors
 
 
 def get_factors(n):
@@ -172,16 +183,19 @@ def get_factors(n):
     Find all factors of a number.
 
     :type n: int
-    :rtype: int list
+    :rtype: set[int]
     """
 
     factors = set()
 
-    for i in range(1, int(math.sqrt(n)) + 1):
-
+    for i in range(2, int(math.sqrt(n)) + 1):
         if n % i == 0:
             factors.add(i)
             factors.add(n // i)
+
+    # don't forget to add 1 and self as factors
+    factors.add(1)
+    factors.add(n)
 
     return factors
 
@@ -191,7 +205,7 @@ def get_proper_factors(n):
     Find all factors of n except for self.
 
     :type n: int
-    :rtype: int array
+    :rtype: set[int]
     """
 
     factors = get_factors(n)
@@ -207,19 +221,25 @@ def get_prime_factors(n):
     Find all prime factors of a number.
 
     :type n: int
-    :rtype: int array
+    :rtype: list[int]
     """
 
     p_factors = []
 
-    c = 2
-    while n > 1:
+    # Check for 2 as a factor
+    while n % 2 == 0:
+        p_factors.append(2)
+        n //= 2
 
-        if n % c == 0:
+    # Check odd factors up to sqrt(n)
+    for c in range(3, int(math.sqrt(n)) + 1, 2):
+        while n % c == 0:
             p_factors.append(c)
-            n /= c
-        else:
-            c += 1
+            n //= c
+
+    # If n is still greater than 2, it must be prime
+    if n > 2:
+        p_factors.append(n)
 
     return p_factors
 
@@ -321,7 +341,7 @@ def get_primes_below_n(ceiling):
     :param ceiling: Upper limit for prime search
     :type ceiling: int
     :return: Every prime below n
-    :rtype: list of ints
+    :rtype: list[int]
     """
 
     # init empty list
@@ -342,7 +362,7 @@ def get_triangle_max_path_sum(t):
     highest max value.
 
     :param t: Number triangle
-    :type t: 2D list of ints
+    :type t: list[int][int]
     :rtype: int
     """
 
@@ -439,7 +459,7 @@ def generate_number_spiral(ceiling):
     :param ceiling: Maximum value for spiral
     :type m: int
     :return: Number spiral
-    :rtype: 2D list of ints
+    :rtype: list[int][int]
     """
 
     # find dimensions needed for matrix...
@@ -507,7 +527,7 @@ def get_longest_matrix_value(matrix):
     """
     Find the 'longest' value in a matrix of strings, ints, or a mix of both.
 
-    :type matrix: 2D list of ints, strings, or a mix
+    :type matrix: list[int|str][int|str]
     :return: Length of 'longest' value in matrix
     :rtype: int
     """
@@ -528,7 +548,7 @@ def get_matrix_diagonals_sum(matrix):
     """
     Find the sum along both diagonals of an n x n matrix.
 
-    :type matrix: 2D list of ints
+    :type matrix: list[int][int]
     :return: Sum along both diagonals.
     :rtype: int
     """
@@ -555,7 +575,7 @@ def print_matrix(matrix):
     """
     Pretty print a matrix.
 
-    :type matrix: 2D list of ints, strings, or a mix
+    :type matrix: list[int|str][int|str]
     """
 
     if len(matrix) == 0:
