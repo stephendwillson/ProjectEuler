@@ -3,17 +3,22 @@ import math
 
 def main():
 
-    # https://en.wikipedia.org/wiki/Factorion
-
-    # must be smaller than 9999999, sum(factorial of digits of 7*9!) = 2540160
-    # pre-calculate factorials for 1-9 to save repeated calculations
+    # Pre-calculate factorials for 1-9 to save repeated calculations
+    # Any 8-digit number has a digits sum of at least 8! = 40,320
+    # which is greater than the number itself.
     factorials = [math.factorial(i) for i in range(10)]
     ceiling = 7 * factorials[9]
 
     total = 0
     for i in range(3, ceiling):
 
-        if sum(factorials[int(digit)] for digit in str(i)) == i:
+        digit_sum = 0
+        num = i
+        while num > 0:
+            digit_sum += factorials[num % 10]
+            num //= 10
+
+        if digit_sum == i:
             total += i
 
     return total
