@@ -1,17 +1,17 @@
+import euler_lib
+
+
 def main():
 
-    n = 0
-    low = 0
+    # The smallest positive number that is evenly divisible by all of the
+    # numbers from 1 to 20 is the least common multiple of those numbers.
+    n = 20
+    lcm = 1
 
-    while not low:
-        n += 20
-        for i in range(1, 21):
-            if n % i != 0:
-                break
-        else:
-            low = n
+    for i in range(2, n + 1):
+        lcm = euler_lib.get_least_common_multiple(lcm, i)
 
-    return low
+    return lcm
 
 
 def description():

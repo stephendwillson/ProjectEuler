@@ -133,6 +133,18 @@ def square_of_sums(n):
     return total * total
 
 
+def get_least_common_multiple(a, b):
+    """
+    Calculate the least common multiple of 2 numbers, a and b.
+
+    :type a: int
+    :type b: int
+    :rtype: int
+    """
+
+    return abs(a*b) // math.gcd(a, b)
+
+
 def get_number_of_factors(n):
     """
     Find only the number of factors of a given number. Saves some time over
