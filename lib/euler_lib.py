@@ -411,7 +411,7 @@ def _outward_spiral_steps():
                 yield RIGHT
 
 
-def matrix_max(matrix):
+def get_longest_matrix_value(matrix):
     """
     Find the 'longest' value in a matrix of strings, ints, or a mix of both.
 
@@ -471,7 +471,7 @@ def print_matrix(matrix):
         return
 
     # get size of largest matrix element for padding prints
-    padding = matrix_max(matrix)
+    padding = get_longest_matrix_value(matrix)
 
     # print it out
     p = ""
