@@ -322,13 +322,27 @@ def is_circular_prime(n):
     :rtype: bool
     """
 
-    tmp = str(n)
+    n_str = str(n)
 
-    for i in range(0, len(tmp)):
+    # check if the number itself is prime
+    if not is_prime(n):
+        return False
 
-        tmp = rotate(str(n), i)
-        if not is_prime(int(tmp)):
+    primes = set()
+
+    # check if all rotations of the number are prime
+    for i in range(1, len(n_str)):
+
+        rotated_n = int(rotate(n_str, i))
+
+        # skip circular primes we've already tested
+        if rotated_n in primes:
+            continue
+
+        if not is_prime(rotated_n):
             return False
+
+        primes.add(rotated_n)
 
     return True
 
