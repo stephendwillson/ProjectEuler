@@ -2,36 +2,39 @@ def main():
 
     ceiling = 1000000
 
-    # naive approach took too long, so now cache collatz lengths
-    lengths = [0] * ceiling
+    # create cache
+    lengths_cache = [-1] * ceiling
+    lengths_cache[1] = 1
 
-    for origin in range(1, ceiling + 1):
+    max_length = 0
+    max_length_n = 0
+    for i in range(2, ceiling):
+        n = i
+        seq_length = 0
 
-        n = origin
-        length = 0
-        while True:
+        while n > 1:
 
-            # if no cache hit found, update cache
-            if n == 1:
-                lengths[origin-1] = length
-                break
-
-            # if cache hit found, stop calc and update cache
-            if n <= len(lengths) and lengths[n-1] != 0:
-                lengths[origin-1] = lengths[n-1] + length
+            # if we get cache hit, add number to current length and bail out
+            if n < i and lengths_cache[n] != -1:
+                seq_length += lengths_cache[n]
                 break
 
             # collatz
             if n % 2 == 0:
-                n = n//2
+                n = n // 2
             else:
                 n = 3*n + 1
 
-            length += 1
+            seq_length += 1
 
-    highest = lengths.index(max(lengths)) + 1
+        # update cache
+        lengths_cache[i] = seq_length
 
-    return highest
+        if seq_length > max_length:
+            max_length = seq_length
+            max_length_n = i
+
+    return max_length_n
 
 
 def description():
