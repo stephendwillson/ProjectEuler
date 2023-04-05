@@ -1,35 +1,26 @@
+import math
+
+
 def main():
 
-    # x ^ n
-    n = 5
+    # ceiling = #_digits x 9^exp
+    # ceiling = 5 * 9^5 = 295245
 
-    # need an upper bound. started by blindly picking 1000000 and it worked.
-    # tightened further, n is 5, number of digits must be at least 5
-    # ceiling = #_digits x 9^n
-    # ceiling = 5 * 9^5
-    # ceiling = 295245
-
+    exp = 5
     ceiling = 295245
     total = 0
 
-    # 1 doesn't count per rules so start at 2
+    # calculate the value of 1 - 9 ^ exp up front to save time
+    digit_powers = [math.pow(i, exp) for i in range(10)]
+
     for i in range(2, ceiling):
-        tmp = digit_to_power(i, n)
-        if tmp == i:
+
+        i_total = 0
+        for digit in str(i):
+            i_total += digit_powers[int(digit)]
+
+        if i_total == i:
             total += i
-
-    return total
-
-
-def digit_to_power(n, exp):
-    """Calculate sum of digits_of_n ^ exp."""
-
-    total = 0
-
-    for i in range(0, len(str(n))):
-
-        digit = int(str(n)[i])
-        total += digit ** exp
 
     return total
 
