@@ -3,27 +3,30 @@ import euler_lib
 
 def main():
 
-    running_prime_count = 0
-    max_prime_seq_len = 0
+    max_a = 1000
+    max_b = 1000
 
+    # compute the list of odd primes up to the max value of b
+    tmp_prime_list = euler_lib.get_primes_below_n(max_b)
+    prime_list = []
+    for p in tmp_prime_list:
+        if 2 < p < max_b and p % 2 == 1:
+            prime_list.append(p)
+
+    max_prime_seq_len = 0
     max_product = 0
 
-    for a in range(-1000, 1000):
-        for b in range(-1001, 1001):
+    for a in range(-max_a, max_a + 1):
+        for b in prime_list:
 
-            n = 0
-            while True:
-
-                if not euler_lib.is_prime(n*n + a*n + b):
-                    break
-
-                running_prime_count += 1
+            # count number of consecutive primes
+            n = 1
+            while euler_lib.is_prime(n*n + a*n + b):
                 n += 1
 
-            if running_prime_count > max_prime_seq_len:
-                max_prime_seq_len = running_prime_count
+            if n > max_prime_seq_len:
+                max_prime_seq_len = n
                 max_product = a * b
-            running_prime_count = 0
 
     return max_product
 
