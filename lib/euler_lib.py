@@ -480,21 +480,28 @@ def num_coin_combos(coins, target):
     Find the total number of combinations of coins that add up to the target.
 
     :param coins: Possible coin values
-    :type coins: int array
+    :type coins: list of int
     :param target: Amount coins should add up to
     :type target: int
+    :return: Total number of combinations
     :rtype: int
     """
 
-    if target < 0 or len(coins) <= 0:
-        return 0
-    if target == 0:
-        return 1
+    # list to store number of combinations for each possible value of
+    # target and each possible coin denomination
+    combos = [0 for _ in range(target + 1)]
 
-    return (
-        num_coin_combos(coins[:-1], target)
-        + num_coin_combos(coins, target - coins[-1])
-    )
+    # if the target is 0, there is one combination
+    combos[0] = 1
+
+    # update number of combinations for each possible value of target and
+    # each possible coin denomination
+    for coin in coins:
+        for j in range(coin, target + 1):
+            combos[j] += combos[j-coin]
+
+    # last element of array will be total combos
+    return combos[target]
 
 
 def count_lattice_paths(n, m):
