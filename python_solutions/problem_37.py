@@ -6,36 +6,15 @@ def main():
     n = 11
 
     t_primes = []
-    i = 10
+    i = 11
     while len(t_primes) < n:
 
-        i += 1
-        if is_trunc_prime(i):
+        i += 2
+
+        if euler_lib.is_left_right_truncatable_prime(i):
             t_primes.append(i)
 
     return sum(t_primes)
-
-
-def is_trunc_prime(n):
-
-    if not euler_lib.is_prime(n):
-        return False
-
-    # strip digits off the end
-    tmp = str(n)
-    while len(str(tmp)) > 1:
-        tmp = int(str(tmp)[:-1])
-        if not euler_lib.is_prime(tmp):
-            return False
-
-    # strip digits off the beginning
-    tmp = str(n)
-    while len(str(tmp)) > 1:
-        tmp = int(str(tmp)[1:])
-        if not euler_lib.is_prime(tmp):
-            return False
-
-    return True
 
 
 def description():

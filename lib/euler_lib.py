@@ -347,6 +347,36 @@ def is_circular_prime(n):
     return True
 
 
+def is_left_right_truncatable_prime(n):
+    """
+    Test if a number is a prime that is truncatable both from left to right
+    and right to left.
+
+    :type n: int
+    :rtype: bool
+    """
+
+    if not is_prime(n):
+        return False
+
+    # strip digits off the end
+    tmp = n // 10
+    while tmp > 0:
+        if not is_prime(tmp):
+            return False
+        tmp //= 10
+
+    # strip digits off the beginning
+    length = len(str(n))
+    while length > 1:
+        n = int(str(n)[1:])
+        length -= 1
+        if not is_prime(n):
+            return False
+
+    return True
+
+
 def get_primes_below_n(ceiling):
     """
     Get a list of all primes below the value of ceiling.
