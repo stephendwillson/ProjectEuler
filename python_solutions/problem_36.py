@@ -8,8 +8,7 @@ def main():
     total = 0
     for i in range(0, n + 1):
 
-        i_b = bin(i).replace("0b", "")
-        if euler_lib.is_palindrome(i) and euler_lib.is_palindrome(i_b):
+        if euler_lib.is_palindrome(i) and euler_lib.is_palindrome(i, base=2):
             total += i
 
     return total

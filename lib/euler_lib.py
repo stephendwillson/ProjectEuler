@@ -10,15 +10,31 @@ import itertools
 import random
 
 
-def is_palindrome(s):
+def is_palindrome(val, base=10):
     """
-    Check if string is a palindrome.
+    Test if a string or int is a palindrome. Optionally pass a base to test
+    if an integer is a palindrome in that base.
 
-    :type s: string
+    :param val: Value to test for palindromicity
+    :type val: str|int
+    :param base: Base to test int, defaults to 10
+    :type base: int, optional
     :rtype: bool
     """
 
-    return str(s) == str(s)[::-1]
+    if isinstance(val, str):
+        return val == val[::-1]
+
+    digits = []
+    if isinstance(val, int):
+
+        while val > 0:
+            digits.append(val % base)
+            val //= base
+
+        return digits == digits[::-1]
+
+    return False
 
 
 def is_leap_year(y):
