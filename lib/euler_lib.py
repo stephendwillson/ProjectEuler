@@ -114,7 +114,7 @@ def get_triangle_number(n):
     :rtype: int
     """
 
-    return n * (n + 1) / 2
+    return n * (n + 1) // 2
 
 
 def sum_of_squares(n):
@@ -234,7 +234,7 @@ def get_proper_factors(n):
 
 def get_prime_factors(n):
     """
-    Find all prime factors of a number.
+    Find all prime factors of a number via trial division.
 
     :type n: int
     :rtype: list[int]

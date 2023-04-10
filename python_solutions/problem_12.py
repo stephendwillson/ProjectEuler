@@ -9,7 +9,7 @@ def main():
     triangle = 0
 
     i = 0
-    while divisors < target:
+    while divisors <= target:
         i += 1
 
         triangle = euler_lib.get_triangle_number(i)
