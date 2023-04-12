@@ -1,10 +1,12 @@
-# Project Euler
 https://projecteuler.net/about#publish
-Solutions and the scripts to obtain them for problems beyond 100 will never be posted per Project Euler publishing policy. Please attempt to 
 
+
+Solutions and the scripts to obtain them for problems beyond 100 will never be posted per Project Euler publishing policy.
+As the policy says, solving these problems is pretty rewarding. I encourage giving it a shot coming up with your own solution.
+
+
+# Project Euler
 A collection of Project Euler solution scripts and a driver to run them. The goal is to refresh and maintain Python skills.
-
-
 
 
 # Usage
@@ -68,7 +70,7 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 ================================================================================
 
-PROBLEM 1: 98760
+PROBLEM 1: 1234567890
 Time to solve: 0.0000s
 
 
@@ -87,10 +89,7 @@ $ python python_solutions/problem_23.py
 # `euler_lib.py` Common Library
 Functions that are likely to show up repeatedly like hunting for prime numbers should live in `euler_lib.py`.
 
-**NOTE:** be sure to set the PYTHONPATH environment variable to allow scripts to find `euler_lib.py`:
-```
-export PYTHONPATH=/path/to/ProjectEuler/lib
-```
+**NOTE:** be sure to set the PYTHONPATH environment variable to allow scripts to find `euler_lib.py`.
 
 # Supplemental Material
 Any extra material required for a problem such as the list of names provided with Problem 22 should be placed in the `ProjectEuler/supplemental` directory.
@@ -135,4 +134,5 @@ PE_SOLUTION = 0
 
 if __name__ == "__main__":
     print(main())
+
 ```
