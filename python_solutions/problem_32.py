@@ -63,7 +63,7 @@ include it once in your sum.
     print(desc, end="")
 
 
-PE_NAME = "PROBLEM NAME"
+PE_NAME = "PANDIGITAL PRODUCTS"
 PE_SOLUTION = 45228
 
 if __name__ == "__main__":

@@ -94,7 +94,7 @@ find the value of the denominator.
     print(desc, end="")
 
 
-PE_NAME = "PROBLEM NAME"
+PE_NAME = "DIGIT CANCELLING FRACTIONS"
 PE_SOLUTION = 100
 
 if __name__ == "__main__":
