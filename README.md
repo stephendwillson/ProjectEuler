@@ -1,5 +1,10 @@
 # Project Euler
-Project Euler solutions and a driver to run them. The goal is to refresh and maintain Python skills.
+https://projecteuler.net/about#publish
+Solutions and the scripts to obtain them for problems beyond 100 will never be posted per Project Euler publishing policy. Please attempt to 
+
+A collection of Project Euler solution scripts and a driver to run them. The goal is to refresh and maintain Python skills.
+
+
 
 
 # Usage
