@@ -124,6 +124,7 @@ The descriptive text of the problem from the Project Euler site goes here.
 """
     print(desc, end="")
 
+
 PE_NAME = "PROBLEM NAME"
 PE_SOLUTION = 0
 
