@@ -1,12 +1,13 @@
 https://projecteuler.net/about#publish
 
 
-Solutions and the scripts to obtain them for problems beyond 100 will never be posted per Project Euler publishing policy.
-As the policy says, solving these problems is pretty rewarding. I encourage giving it a shot coming up with your own solution.
+Solutions and the scripts to obtain them for problems beyond 100 will not be posted per Project Euler publishing policy.
+As the policy says, solving these problems can be pretty rewarding. I encourage giving it a shot coming up with your own solution.
 
 
 # Project Euler
-A collection of Project Euler solution scripts and a driver to run them. The goal is to refresh and maintain Python skills.
+A collection of Project Euler solution scripts and a driver to run them. The goal is to refresh and maintain my Python skills.
+The goal is not to create every prime hunting, etc. algorithm from scratch.
 
 
 # Usage
@@ -102,11 +103,6 @@ Any extra material required for a problem such as the list of names provided wit
   - A problem name, `PE_NAME`
   - A solution, `PE_SOLUTION`
 - The `PE_SOLUTION` variable is intended to be manually set only after the actual solution is found. It should be used as a sanity check when changes to a solution for efficiency, etc. are made. This means passing the `--validate` flag **should** cause a `ValueError` to be raised for solutions still under development.
-- A directive should be added to allow running standalone in addition to driver-initiated:
-```python
-if __name__ == "__main__":
-    print(main())
-```
 
 ## Solution Template
 A basic template for implementing new solution scripts:
