@@ -11,6 +11,12 @@ import yaml
 
 
 def parse_arguments():
+    """
+    Parse command-line args.
+
+    :return: Parsed command-line args.
+    :rtype: argparse.Namespace
+    """
 
     parser = argparse.ArgumentParser()
 
@@ -34,6 +40,12 @@ def parse_arguments():
 
 
 def load_config():
+    """
+    Load config info for problems from YAML.
+
+    :return: Loaded config data.
+    :rtype: dict
+    """
 
     with open("problem_data.yaml", "r") as config_file:
         return yaml.safe_load(config_file)
@@ -41,12 +53,12 @@ def load_config():
 
 def print_problem_info(problem, problem_data):
     """
-    Print the problem summary as seen on the Project Euler problem page.
+    Print descriptive info about a specific problem.
 
-    :param problem: Problem number
+    :param problem: The problem number.
     :type problem: int
-    :param problem_data: List of problems from the configuration
-    :type problem_data: list
+    :param problem_data: Dict of problem data from YAML.
+    :type problem_data: dict
     """
 
     print("=" * 79)
@@ -72,14 +84,14 @@ def print_problem_info(problem, problem_data):
 
 def build_problem_list(problem_args, problem_data):
     """
-    Build a list of problem data dictionaries based on command line params.
+    Build a list of problems to run.
 
-    :param problem_args: -p command line params
-    :type problem_args: list
-    :param problem_data: List of problems from the configuration
-    :type problem_data: list
-    :return: List of problem data dictionaries
-    :rtype: list
+    :param problem_args: List of problem numbers to run.
+    :type problem_args: list of str
+    :param problem_data: List of problem data dicts from YAML.
+    :type problem_data: list of dict
+    :return: List of problem data dicts for problems to run.
+    :rtype: list of dict
     """
 
     # if no -p arg is passed, run every problem
@@ -89,6 +101,7 @@ def build_problem_list(problem_args, problem_data):
     selected_problems = []
 
     for arg in problem_args:
+
         # don't forget to handle multiple specific problems
         problem_numbers = arg.split(',')
         for problem_num in problem_numbers:
@@ -102,46 +115,45 @@ def build_problem_list(problem_args, problem_data):
 
 def solve_problem(problem, validate):
     """
-    Solve the specified problem. Validate solution if specified.
+    Solve the specified problem and optionally validate the solution.
 
-    :param problem: Problem data dictionary
+    :param problem: Dict of problem data from YAML.
     :type problem: dict
-    :param validate: Check whether solution is correct
+    :param validate: If False, does not bother checking against the solution in YAML.
     :type validate: bool
-    :raises ValueError: ValueError is solution is incorrect
+    :raises ValueError: If the calculated solution does not match the solution in YAML.
+    :return: The calculated solution.
     :rtype: int
     """
 
+    # build path to problem script
     problem_script_filename = f"problem_{problem['number']}.py"
     problem_script_path = os.path.join("python_solutions", problem_script_filename)
-
-    # Use pathlib.Path on the problem script path
     problem_path = pathlib.Path(problem_script_path)
 
-    if "solution" in problem and problem["solution"]:
-        # If a solution is provided in the YAML file, use it
-        solution = int(problem["solution"])
-    else:
-        # If no solution is provided or it's empty, default to 0
-        solution = 0
+    # just default to 0 if solution property doesn't exist in yaml
+    expected_solution = int(problem.get("solution", 0))
 
+    # import the solution script and run
     problem_script_name = f"problem_{problem['number']}"
     problem_script = importlib.import_module(f"python_solutions.{problem_script_name}")
     calculated_solution = problem_script.main()
 
-
-    if validate and solution != calculated_solution:
-            raise ValueError(
-                "WRONG SOLUTION!\n"
-                f"Expected {solution}\n"
-                f"Received {calculated_solution}"
-            )
+    # validate the solution if specified
+    if validate and expected_solution != calculated_solution:
+        raise ValueError(
+            "WRONG SOLUTION!\n"
+            f"Expected {expected_solution}\n"
+            f"Received {calculated_solution}"
+        )
 
     return calculated_solution
 
 
-
 def main():
+    """
+    Entry point for running Project Euler problem solver scripts.
+    """
 
     args = parse_arguments()
     problem_data = load_config()

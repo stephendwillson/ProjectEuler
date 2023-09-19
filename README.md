@@ -35,7 +35,7 @@ Supported arguments:
 
 -p PROBLEM [PROBLEM ...], 
 --problem PROBLEM [PROBLEM ...]       
-                    Space-separated list of problems.
+                    Comma- or space-separated list of problems.
                     Chooses ALL problems if none are
                     specified.
 ```
@@ -90,24 +90,19 @@ $ python python_solutions/problem_23.py
 # `euler_lib.py` Common Library
 Functions that are likely to show up repeatedly like hunting for prime numbers should live in `euler_lib.py`.
 
-**NOTE:** be sure to set the PYTHONPATH environment variable to allow scripts to find `euler_lib.py`.
-
 # Supplemental Material
 Any extra material required for a problem such as the list of names provided with Problem 22 should be placed in the `ProjectEuler/supplemental` directory.
 
 # Adding Solutions
 - Solution scripts are expected to be in the `python_solutions` directory.
 - Solution scripts are expected to have a `main()` function that returns the problem solution.
-- Solution scripts are expected to have several fields:
-  - A description function, `def description()`
-  - A problem name, `PE_NAME`
-  - A solution, `PE_SOLUTION`
-- The `PE_SOLUTION` variable is intended to be manually set only after the actual solution is found. It should be used as a sanity check when changes to a solution for efficiency, etc. are made. This means passing the `--validate` flag **should** cause a `ValueError` to be raised for solutions still under development.
+- Information related to the problem such as the description, name, and URL should live in `problem_data.yaml`.
+- The `solution` property in the YAML config file is meant to be manually set after solving the problem. It should be used as a sanity check when changes to a solution for efficiency, etc. are made. This means passing the `--validate` flag **should** cause a `ValueError` to be raised for solutions still under development.
 
 ## Solution Template
 A basic template for implementing new solution scripts:
 ```python
-import euler_lib
+from utils import euler_lib
 
 
 def main():
@@ -115,20 +110,21 @@ def main():
     return -1
 
 
-def description():
-
-    desc = """
-https://projecteuler.net/problem=N
-
-The descriptive text of the problem from the Project Euler site goes here.
-"""
-    print(desc, end="")
-
-
-PE_NAME = "PROBLEM NAME"
-PE_SOLUTION = 0
-
 if __name__ == "__main__":
     print(main())
 
+```
+
+For data related to the problem:
+```yaml
+problems:
+  - number: "1"
+    name: "MULTIPLES OF 3 OR 5"
+    url: "https://projecteuler.net/problem=1"
+    description: |
+      If we list all the natural numbers below 10 that are multiples of 3 or 5,
+      we get 3, 5, 6, and 9. The sum of these multiples is 23.
+      
+      Find the sum of all the multiples of 3 or 5 below 1000.
+    solution: 12345
 ```

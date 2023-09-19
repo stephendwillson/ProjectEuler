@@ -2,7 +2,7 @@
 sdwillso
 Common functionality for solving Project Euler problems.
 """
-# pylint: disable=invalid-name
+
 import math
 import string
 import collections
@@ -12,12 +12,13 @@ import random
 
 def is_palindrome(val, base=10):
     """
-    Test if a string or int is a palindrome. Optionally pass a base to test
-    if an integer is a palindrome in that base.
+    Check if a string or integer is a palindrome.
 
-    :param val: Value to test for palindromicity
-    :type val: str|int
-    :param base: Base to test int, defaults to 10
+    Optionally, specify a base to test if an integer is a palindrome in that base.
+
+    :param val: Value to test for palindromicity.
+    :type val: str or int
+    :param base: Base to test int, defaults to 10.
     :type base: int, optional
     :rtype: bool
     """
@@ -512,6 +513,7 @@ def count_lattice_paths(n, m):
     :type m: int
     :rtype: int
     """
+
     # n x m lattice paths will always have n + m steps
     # out of n + m, count all possible downward steps
     # anything left is rightward
