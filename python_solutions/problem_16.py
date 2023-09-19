@@ -1,4 +1,4 @@
-import euler_lib
+from utils import euler_lib
 
 
 def main():
@@ -9,21 +9,6 @@ def main():
 
     return total
 
-
-def description():
-
-    desc = """
-https://projecteuler.net/problem=16
-
-2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
-
-What is the sum of the digits of the number 2^1000?
-"""
-    print(desc, end="")
-
-
-PE_NAME = "POWER DIGIT SUM"
-PE_SOLUTION = 1366
 
 if __name__ == "__main__":
     print(main())

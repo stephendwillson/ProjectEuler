@@ -1,4 +1,4 @@
-import euler_lib
+from utils import euler_lib
 
 
 def main():
@@ -10,25 +10,6 @@ def main():
 
     return count
 
-
-def description():
-
-    desc = """
-https://projecteuler.net/problem=15
-
-Starting in the top left corner of a 2x2 grid, and only being able to move to
-the right and down, there are exactly 6 routes to the bottom right corner.
-
-sdwillso NOTE: There's an image here in the original problem of all 6 routes
-to the bottom right corner.
-
-How many such routes are there through a 20x20 grid?
-"""
-    print(desc, end="")
-
-
-PE_NAME = "LATTICE PATHS"
-PE_SOLUTION = 137846528820
 
 if __name__ == "__main__":
     print(main())
