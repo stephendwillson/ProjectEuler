@@ -128,7 +128,7 @@ def solve_problem(problem, validate):
 
     # build path to problem script
     problem_script_filename = f"problem_{problem['number']}.py"
-    problem_script_path = os.path.join("python_solutions", problem_script_filename)
+    problem_script_path = os.path.join("solutions", "python", problem_script_filename)
     problem_path = pathlib.Path(problem_script_path)
 
     # just default to 0 if solution property doesn't exist in yaml
@@ -136,7 +136,7 @@ def solve_problem(problem, validate):
 
     # import the solution script and run
     problem_script_name = f"problem_{problem['number']}"
-    problem_script = importlib.import_module(f"python_solutions.{problem_script_name}")
+    problem_script = importlib.import_module(f"solutions.python.{problem_script_name}")
     calculated_solution = problem_script.main()
 
     # validate the solution if specified
