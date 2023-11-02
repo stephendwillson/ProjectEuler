@@ -88,7 +88,13 @@ def rotate(s, n):
     :rtype: string
     """
 
-    return s[n:] + s[:n]
+    if len(s) == 0:
+        return s
+
+    # make sure to handle number of rotations > input string length
+    rotation = n % len(s)
+
+    return s[rotation:] + s[:rotation]
 
 
 def sum_digits(n):
@@ -115,6 +121,9 @@ def get_triangle_number(n):
     :rtype: int
     """
 
+    if n < 1:
+        return 0
+
     return n * (n + 1) // 2
 
 
@@ -126,6 +135,9 @@ def sum_of_squares(n):
     :type n: int
     :rtype: int
     """
+
+    if n < 1:
+        return 0
 
     total = 0
     for i in range(1, n + 1):
@@ -143,6 +155,9 @@ def square_of_sums(n):
     :rtype: int
     """
 
+    if n < 1:
+        return 0
+
     total = 0
     for i in range(1, n + 1):
         total += i
@@ -159,6 +174,10 @@ def get_least_common_multiple(a, b):
     :rtype: int
     """
 
+    # lcm involving 0 is always 0
+    if a == 0 or b == 0:
+        return 0
+
     return abs(a*b) // math.gcd(a, b)
 
 
@@ -170,6 +189,9 @@ def get_number_of_factors(n):
     :type n: int
     :rtype: int
     """
+
+    if n < 1:
+        return 0
 
     prime_factors = get_prime_factors(n)
 
@@ -205,6 +227,10 @@ def get_factors(n):
 
     factors = set()
 
+    # no factors for negative numbers
+    if n < 1:
+        return {}
+
     for i in range(2, int(math.sqrt(n)) + 1):
         if n % i == 0:
             factors.add(i)
@@ -225,6 +251,10 @@ def get_proper_factors(n):
     :rtype: set[int]
     """
 
+    # negatives, 0, and 1 have no proper factors
+    if n < 2:
+        return {}
+
     factors = get_factors(n)
 
     if n in factors:
@@ -240,6 +270,9 @@ def get_prime_factors(n):
     :type n: int
     :rtype: list[int]
     """
+
+    if n < 2:
+        return []
 
     p_factors = []
 
@@ -405,6 +438,9 @@ def get_primes_below_n(ceiling):
     :rtype: list[int]
     """
 
+    if ceiling < 2:
+        return []
+
     # init empty list
     sieve = [True] * (ceiling + 1)
     sieve[0] = sieve[1] = False
@@ -423,7 +459,7 @@ def get_triangle_max_path_sum(t):
     highest max value.
 
     :param t: Number triangle
-    :type t: list[int][int]
+    :type t: list[list[int]]
     :rtype: int
     """
 
@@ -451,10 +487,17 @@ def get_recurring_decimal_cycle(numerator, denominator):
     :type numerator: int
     :type denominator: int
     :return: Numeric cycle if one exists
-    :rtype: int, None
+    :rtype: str, None
     """
 
+    if denominator == 0:
+        return None
+
     repeat = ""
+
+    # deal with negatives
+    numerator = abs(numerator)
+    denominator = abs(denominator)
 
     # remainder dictionary --> {remainder : position}
     rem_dict = {}
@@ -487,6 +530,9 @@ def num_coin_combos(coins, target):
     :return: Total number of combinations
     :rtype: int
     """
+
+    if target < 1:
+        return 0
 
     # list to store number of combinations for each possible value of
     # target and each possible coin denomination
@@ -528,8 +574,11 @@ def generate_number_spiral(ceiling):
     :param ceiling: Maximum value for spiral
     :type m: int
     :return: Number spiral
-    :rtype: list[int][int]
+    :rtype: list[tuple[int, int]]
     """
+
+    if ceiling == 0:
+        return [()]
 
     # find dimensions needed for matrix...
     dim = int(math.ceil(math.sqrt(ceiling))) + 1
