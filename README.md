@@ -128,3 +128,30 @@ problems:
       Find the sum of all the multiples of 3 or 5 below 1000.
     solution: 12345
 ```
+
+# Tests
+A set of Python tests are implemented using pytest.
+
+## Organization
+Tests should live in `project_root/tests/`.
+
+
+`test_problems.py`
+- Python solution script tests
+- Runs `main()` functions of `problem_<n>.py` scripts and validates solutions
+against solutions in `project_root/problem_data.yaml`
+
+`test_euler_lib.py`
+- Python utility library tests
+- Executes every function prepended with `test_`
+
+## Running Tests
+Ensure pytest is installed:
+```sh
+pip install pytest
+```
+
+Navigate to project root and run:
+```sh
+pytest
+```
