@@ -534,3 +534,22 @@ def test_is_pandigital():
     assert not euler_lib.is_pandigital(11)
     assert not euler_lib.is_pandigital(122)
     assert not euler_lib.is_pandigital(113456789)
+
+
+def test_is_permutation():
+
+    assert euler_lib.is_permutation(0, 0)
+    assert not euler_lib.is_permutation(0, 123)
+
+    assert euler_lib.is_permutation(1, 1)
+    assert not euler_lib.is_permutation(5, 6)
+
+    assert euler_lib.is_permutation(1, -1)
+    assert euler_lib.is_permutation(-1, -1)
+    assert euler_lib.is_permutation(-123, 321)
+    assert euler_lib.is_permutation(-456, -654)
+
+    assert euler_lib.is_permutation(11223344, 41312243)
+    assert not euler_lib.is_permutation(1223344, 34342121)
+
+    assert euler_lib.is_permutation(1234567890123456789, 9876543210987654321)

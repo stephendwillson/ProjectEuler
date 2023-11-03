@@ -736,3 +736,18 @@ def is_pandigital(n):
     digits = [str(x) for x in range(1, len(n_str) + 1)]
 
     return set(n_str) == set(digits)
+
+
+def is_permutation(a, b):
+    """
+    Check if 'a' and 'b' are permutations of each other.
+
+    :type a: int
+    :type b: int
+    :rtype: bool
+    """
+
+    str_a = sorted(str(abs(a)))
+    str_b = sorted(str(abs(b)))
+
+    return str_a == str_b
