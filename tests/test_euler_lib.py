@@ -514,3 +514,23 @@ def test_get_longest_matrix_value():
     ]
     assert 9 == euler_lib.get_longest_matrix_value(matrix)
 
+
+def test_is_pandigital():
+
+    assert euler_lib.is_pandigital(1)
+
+    assert euler_lib.is_pandigital(1234)
+    assert euler_lib.is_pandigital(1324)
+    assert euler_lib.is_pandigital(4231)
+
+    assert euler_lib.is_pandigital(123456789)
+    assert euler_lib.is_pandigital(381654729)
+
+    assert not euler_lib.is_pandigital(-1)
+    assert not euler_lib.is_pandigital(0)
+
+    assert not euler_lib.is_pandigital(2)
+
+    assert not euler_lib.is_pandigital(11)
+    assert not euler_lib.is_pandigital(122)
+    assert not euler_lib.is_pandigital(113456789)

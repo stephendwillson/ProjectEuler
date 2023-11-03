@@ -1,5 +1,7 @@
 import math
 
+from utils import euler_lib
+
 
 def main():
 
@@ -20,26 +22,10 @@ def main():
             if len(mult_str) != 9:
                 continue
 
-            if is_pandigital(mult_str):
+            if euler_lib.is_pandigital(mult_str):
                 pandigitals.add(prod)
 
     return sum(pandigitals)
-
-
-def is_pandigital(pd):
-    """
-    Check if a number is 1-9 pandigital - makes use of all the digits
-    1 to 9.
-
-    :param pd: Integer to check for pandigitality
-    :type pd: int
-    :rtype: bool
-    """
-
-    digits = set(str(d) for d in range(1, 10))
-    n_digits = set(str(pd))
-
-    return len(n_digits) == len(digits) and n_digits == digits
 
 
 if __name__ == "__main__":

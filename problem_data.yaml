@@ -782,6 +782,18 @@ problems:
       d(1) x d(10) x d(100) x d(1000) x d(10000) x d(100000) x d(1000000)
     solution: 210
 
+  - number: "41"
+    name: "PANDIGITAL PRIME"
+    url: "https://projecteuler.net/problem=41"
+    description: |
+      We shall say that an n-digit number is pandigital if it makes use of
+      all the digits 1 to n exactly once.
+      
+      For example, 2143 is a 4-digit pandigital and is also prime.
+
+      What is the largest n-digit pandigital prime that exists?
+    solution: 7652413
+
   - number: "42"
     name: "CODED TRIANGLE NUMBERS"
     url: "https://projecteuler.net/problem=42"

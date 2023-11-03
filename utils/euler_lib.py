@@ -718,3 +718,21 @@ def print_matrix(matrix):
         if p:
             print(p)
             p = ""
+
+
+def is_pandigital(n):
+    """
+    Check if a number is pandigital (contains all the digits from
+    1 to the length of the number exactly once). Does not take into
+    account 0s. Only considers base 10.
+
+    :type n: int
+    :rtype: bool
+    """
+
+    n_str = str(n)
+
+    # grab every digit from 1 to length of test number
+    digits = [str(x) for x in range(1, len(n_str) + 1)]
+
+    return set(n_str) == set(digits)
