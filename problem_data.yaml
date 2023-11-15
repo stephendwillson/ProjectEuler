@@ -1,5 +1,5 @@
 problems:
-  - number: "1"
+  - number: 1
     name: "MULTIPLES OF 3 OR 5"
     url: "https://projecteuler.net/problem=1"
     description: |
@@ -9,7 +9,7 @@ problems:
       Find the sum of all the multiples of 3 or 5 below 1000.
     solution: 233168
 
-  - number: "2"
+  - number: 2
     name: "EVEN FIBONACCI NUMBERS"
     url: "https://projecteuler.net/problem=2"
     description: |
@@ -22,7 +22,7 @@ problems:
       four million, find the sum of the even-valued terms.
     solution: 4613732
 
-  - number: "3"
+  - number: 3
     name: "LARGEST PRIME FACTOR"
     url: "https://projecteuler.net/problem=3"
     description: |
@@ -31,7 +31,7 @@ problems:
       What is the largest prime factor of the number 600851475143 ?
     solution: 6857
 
-  - number: "4"
+  - number: 4
     name: "LARGEST PALINDROME PRODUCT"
     url: "https://projecteuler.net/problem=4"
     description: |
@@ -41,7 +41,7 @@ problems:
       Find the largest palindrome made from the product of two 3-digit numbers.
     solution: 906609
 
-  - number: "5"
+  - number: 5
     name: "SMALLEST MULTIPLE"
     url: "https://projecteuler.net/problem=5"
     description: |
@@ -52,7 +52,7 @@ problems:
       numbers from 1 to 20?
     solution: 232792560
 
-  - number: "6"
+  - number: 6
     name: "SUM SQUARE DIFFERENCE"
     url: "https://projecteuler.net/problem=6"
     description: |
@@ -70,7 +70,7 @@ problems:
       natural numbers and the square of the sum.
     solution: 25164150
 
-  - number: "7"
+  - number: 7
     name: "10001ST PRIME"
     url: "https://projecteuler.net/problem=7"
     description: |
@@ -80,7 +80,7 @@ problems:
       What is the 10001st prime number?
     solution: 104743
 
-  - number: "8"
+  - number: 8
     name: "LARGEST PRODUCT IN A SERIES"
     url: "https://projecteuler.net/problem=8"
     description: |
@@ -112,7 +112,7 @@ problems:
       greatest product. What is the value of this product?
     solution: 23514624000
 
-  - number: "9"
+  - number: 9
     name: "SPECIAL PYTHAGOREAN TRIPLET"
     url: "https://projecteuler.net/problem=9"
     description: |
@@ -125,7 +125,7 @@ problems:
       Find the product abc.
     solution: 31875000
 
-  - number: "10"
+  - number: 10
     name: "SUMMATION OF PRIMES"
     url: "https://projecteuler.net/problem=10"
     description: |
@@ -134,7 +134,7 @@ problems:
       Find the sum of all the primes below two million.
     solution: 142913828922
 
-  - number: "11"
+  - number: 11
     name: "LARGEST PRODUCT IN A GRID"
     url: "https://projecteuler.net/problem=11"
     description: |
@@ -169,7 +169,7 @@ problems:
       (up, down, left, right, or diagonally) in the 20x20 grid?
     solution: 70600674
 
-  - number: "12"
+  - number: 12
     name: "HIGHLY DIVISIBLE TRIANGULAR NUMBER"
     url: "https://projecteuler.net/problem=12"
     description: |
@@ -195,7 +195,7 @@ problems:
       divisors?
     solution: 76576500
 
-  - number: "13"
+  - number: 13
     name: "LARGE SUM"
     url: "https://projecteuler.net/problem=13"
     description: |
@@ -303,7 +303,7 @@ problems:
       53503534226472524250874054075591789781264330331690
     solution: 5537376230
 
-  - number: "14"
+  - number: 14
     name: "LONGEST COLLATZ SEQUENCE"
     url: "https://projecteuler.net/problem=14"
     description: |
@@ -324,7 +324,7 @@ problems:
       NOTE: Once the chain starts the terms are allowed to go above one million.
     solution: 837799
 
-  - number: "15"
+  - number: 15
     name: "LATTICE PATHS"
     url: "https://projecteuler.net/problem=15"
     description: |
@@ -337,7 +337,7 @@ problems:
       How many such routes are there through a 20x20 grid?
     solution: 137846528820
 
-  - number: "16"
+  - number: 16
     name: "POWER DIGIT SUM"
     url: "https://projecteuler.net/problem=16"
     description: |
@@ -346,7 +346,7 @@ problems:
       What is the sum of the digits of the number 2^1000?
     solution: 1366
 
-  - number: "17"
+  - number: 17
     name: "NUMBER LETTER COUNTS"
     url: "https://projecteuler.net/problem=17"
     description: |
@@ -362,7 +362,7 @@ problems:
       British usage.
     solution: 21124
 
-  - number: "18"
+  - number: 18
     name: "MAXIMUM PATH SUM I"
     url: "https://projecteuler.net/problem=18"
     description: |
@@ -400,7 +400,7 @@ problems:
       a clever method! ;o)
     solution: 1074
 
-  - number: "19"
+  - number: 19
     name: "COUNTING SUNDAYS"
     url: "https://projecteuler.net/problem=19"
     description: |
@@ -423,7 +423,7 @@ problems:
       (1 Jan 1901 to 31 Dec 2000)?
     solution: 171
 
-  - number: "20"
+  - number: 20
     name: "FACTORIAL DIGIT SUM"
     url: "https://projecteuler.net/problem=20"
     description: |
@@ -435,7 +435,7 @@ problems:
       Find the sum of the digits in the number 100!
     solution: 648
 
-  - number: "21"
+  - number: 21
     name: "AMICABLE NUMBERS"
     url: "https://projecteuler.net/problem=21"
     description: |
@@ -451,7 +451,7 @@ problems:
       Evaluate the sum of all the amicable numbers under 10000.
     solution: 31626
 
-  - number: "22"
+  - number: 22
     name: "NAMES SCORES"
     url: "https://projecteuler.net/problem=22"
     description: |
@@ -468,7 +468,7 @@ problems:
       What is the total of all the name scores in the file?
     solution: 871198282
 
-  - number: "23"
+  - number: 23
     name: "NON-ABUNDANT SUMS"
     url: "https://projecteuler.net/problem=23"
     description: |
@@ -491,7 +491,7 @@ problems:
       of two abundant numbers.
     solution: 4179871
 
-  - number: "24"
+  - number: 24
     name: "LEXICOGRAPHIC PERMUTATIONS"
     url: "https://projecteuler.net/problem=24"
     description: |
@@ -506,7 +506,7 @@ problems:
       the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
     solution: 2783915460
 
-  - number: "25"
+  - number: 25
     name: "1000-DIGIT FIBONACCI NUMBER"
     url: "https://projecteuler.net/problem=25"
     description: |
@@ -535,7 +535,7 @@ problems:
       digits?
     solution: 4782
 
-  - number: "26"
+  - number: 26
     name: "RECIPROCAL CYCLES"
     url: "https://projecteuler.net/problem=26"
     description: |
@@ -559,7 +559,7 @@ problems:
       in its decimal fraction part.
     solution: 983
 
-  - number: "27"
+  - number: 27
     name: "QUADRATIC PRIMES"
     url: "https://projecteuler.net/problem=27"
     description: |
@@ -588,7 +588,7 @@ problems:
       starting with n = 0.
     solution: -59231
 
-  - number: "28"
+  - number: 28
     name: "NUMBER SPIRAL DIAGONALS"
     url: "https://projecteuler.net/problem=28"
     description: |
@@ -608,7 +608,7 @@ problems:
       formed in the same way?
     solution: 669171001
 
-  - number: "29"
+  - number: 29
     name: "DISTINCT POWERS"
     url: "https://projecteuler.net/problem=29"
     description: |
@@ -628,7 +628,7 @@ problems:
       and 2 ≤ b ≤ 100?
     solution: 9183
 
-  - number: "30"
+  - number: 30
     name: "DIGIT FIFTH POWERS"
     url: "https://projecteuler.net/problem=30"
     description: |
@@ -647,7 +647,7 @@ problems:
       of their digits.
     solution: 443839
 
-  - number: "31"
+  - number: 31
     name: "COIN SUMS"
     url: "https://projecteuler.net/problem=31"
     description: |
@@ -663,7 +663,7 @@ problems:
       How many different ways can £2 be made using any number of coins?
     solution: 73682
 
-  - number: "32"
+  - number: 32
     name: "PANDIGITAL PRODUCTS"
     url: "https://projecteuler.net/problem=32"
     description: |
@@ -681,7 +681,7 @@ problems:
       include it once in your sum.
     solution: 45228
 
-  - number: "33"
+  - number: 33
     name: "DIGIT CANCELLING FRACTIONS"
     url: "https://projecteuler.net/problem=33"
     description: |
@@ -699,7 +699,7 @@ problems:
       find the value of the denominator.
     solution: 100
 
-  - number: "34"
+  - number: 34
     name: "DIGIT FACTORIALS"
     url: "https://projecteuler.net/problem=34"
     description: |
@@ -711,7 +711,7 @@ problems:
       Note: As 1! = 1 and 2! = 2 are not sums they are not included.
     solution: 40730
 
-  - number: "35"
+  - number: 35
     name: "CIRCULAR PRIMES"
     url: "https://projecteuler.net/problem=35"
     description: |
@@ -724,7 +724,7 @@ problems:
       How many circular primes are there below one million?
     solution: 55
 
-  - number: "36"
+  - number: 36
     name: "DOUBLE-BASE PALINDROMES"
     url: "https://projecteuler.net/problem=36"
     description: |
@@ -737,7 +737,7 @@ problems:
       leading zeros.)
     solution: 872187
 
-  - number: "37"
+  - number: 37
     name: "TRUNCATABLE PRIMES"
     url: "https://projecteuler.net/problem=37"
     description: |
@@ -752,7 +752,7 @@ problems:
       NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
     solution: 748317
 
-  - number: "39"
+  - number: 39
     name: "INTEGER RIGHT TRIANGLES"
     url: "https://projecteuler.net/problem=39"
     description: |
@@ -764,7 +764,7 @@ problems:
       For which value of p ≤ 1000, is the number of solutions maximised?
     solution: 840
 
-  - number: "40"
+  - number: 40
     name: "CHAMPERNOWNE'S CONSTANT"
     url: "https://projecteuler.net/problem=40"
     description: |
@@ -782,7 +782,7 @@ problems:
       d(1) x d(10) x d(100) x d(1000) x d(10000) x d(100000) x d(1000000)
     solution: 210
 
-  - number: "41"
+  - number: 41
     name: "PANDIGITAL PRIME"
     url: "https://projecteuler.net/problem=41"
     description: |
@@ -794,7 +794,7 @@ problems:
       What is the largest n-digit pandigital prime that exists?
     solution: 7652413
 
-  - number: "42"
+  - number: 42
     name: "CODED TRIANGLE NUMBERS"
     url: "https://projecteuler.net/problem=42"
     description: |
@@ -813,7 +813,7 @@ problems:
       words?
     solution: 162
 
-  - number: "48"
+  - number: 48
     name: "SELF POWERS"
     url: "https://projecteuler.net/problem=48"
     description: |
@@ -822,7 +822,7 @@ problems:
       Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000.
     solution: 9110846700
 
-  - number: "52"
+  - number: 52
     name: "PERMUTED MULTIPLES"
     url: "https://projecteuler.net/problem=52"
     description: |
@@ -833,7 +833,7 @@ problems:
       and 6x, contain the same digits.
     solution: 142857
 
-  - number: "67"
+  - number: 67
     name: "MAXIMUM PATH SUM II"
     url: "https://projecteuler.net/problem=67"
     description: |

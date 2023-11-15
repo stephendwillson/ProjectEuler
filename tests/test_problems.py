@@ -3,14 +3,13 @@ import importlib
 import pytest
 
 from tests.test_utils import load_problem_data
-import solutions
 import solutions.python
 
 
 # discover every problem script
 problem_module_dir = os.path.dirname(solutions.python.__file__)
 problem_modules = [
-    filename.split("_")[1][:-3]  # isolate problem # and remove .py extension
+    int(filename.split("_")[1][:-3])  # isolate problem # and remove .py extension
     for filename in os.listdir(problem_module_dir)
     if filename.startswith("problem_") and filename.endswith(".py")
 ]
@@ -26,6 +25,6 @@ def test_problem_solution(problem_number):
 
     # check our work
     problem_data = load_problem_data(problem_number)
-    expected_solution = int(problem_data["solution"])
+    expected_solution = problem_data["solution"]
 
     assert calculated_solution == expected_solution

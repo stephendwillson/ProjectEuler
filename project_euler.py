@@ -105,9 +105,13 @@ def build_problem_list(problem_args, problem_data):
         # don't forget to handle multiple specific problems
         problem_numbers = arg.split(',')
         for problem_num in problem_numbers:
-            for problem in problem_data:
-                if problem["number"] == problem_num.strip():
-                    selected_problems.append(problem)
+            num = int(problem_num.strip())
+            matching_problems = [problem for problem in problem_data if problem["number"] == num]
+
+            if not matching_problems:
+                raise ValueError(f"Problem {num} not found in YAML problem data file.")
+
+            selected_problems.extend(matching_problems)
 
     # 'magic' sort before we hand it back
     return sorted(selected_problems, key=lambda x: int(x["number"]))
