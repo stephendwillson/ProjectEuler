@@ -1,10 +1,12 @@
+using System.Numerics;
+
 namespace ProjectEuler
 {
     class Problem1 : Problem
     {
-        public override int Solve()
+        public override BigInteger Solve()
         {
-            int total = 0;
+            BigInteger total = 0;
 
             for (int i = 1; i < 1000; i++)
             {

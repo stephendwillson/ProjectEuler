@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace ProjectEuler
 {
     class Problem
@@ -6,9 +8,9 @@ namespace ProjectEuler
         public string Name { get; set; } = string.Empty;
         public string Url { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public long Solution { get; set; } = -1;
+        public BigInteger Solution { get; set; } = -1;
 
-        public virtual int Solve()
+        public virtual BigInteger Solve()
         {
             return -1;
         }

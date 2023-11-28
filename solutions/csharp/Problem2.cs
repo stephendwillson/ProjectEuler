@@ -1,15 +1,17 @@
+using System.Numerics;
+
 namespace ProjectEuler
 {
     class Problem2 : Problem
     {
-        public override int Solve()
+        public override BigInteger Solve()
         {
             int n = 4000000;
 
             int f1 = 1;
             int f2 = 1;
             int fn = f1 + f2;
-            int total = 0;
+            BigInteger total = 0;
 
             while (f2 <= n)
             {

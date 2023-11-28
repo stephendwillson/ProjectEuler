@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
+using System.Numerics;
 
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
@@ -59,7 +60,7 @@ namespace ProjectEuler
                     if (solve)
                     {
                         var stopwatch = Stopwatch.StartNew();
-                        int solution = problem.Solve();
+                        BigInteger solution = problem.Solve();
                         stopwatch.Stop();
                         totalTime += stopwatch.Elapsed.TotalSeconds;
 
