@@ -43,5 +43,17 @@ namespace ProjectEuler
 
             return primeFactors;
         }
+
+        /// <summary>
+        /// Checks if a given number is a palindrome.
+        /// </summary>
+        /// <param name="number">The number to check for palindromicity.</param>
+        /// <returns>True if the number is a palindrome, false otherwise.</returns>
+        public static bool IsPalindrome(int number)
+        {
+            IEnumerable<char> forwards = number.ToString().ToCharArray();
+
+            return forwards.SequenceEqual(forwards.Reverse());
+        }
     }
 }
