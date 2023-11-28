@@ -1,12 +1,16 @@
 # Python
 __pycache__/
+.pytest_cache/
 venv/
+*.pyc
 
-# Visual Studio Code
-.vscode/
-settings.json
-
-# Compiled binaries and libraries
+# C#
+bin/
+obj/
 *.dll
 *.exe
 *.pdb
+
+# VSCode
+.vscode/
+settings.json
