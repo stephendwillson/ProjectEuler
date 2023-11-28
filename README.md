@@ -155,6 +155,9 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 ===============================================================================
 ```
 
+### `EulerLib` Common Library
+Functions that are likely to show up repeatedly like hunting for prime numbers should live in `EulerLib.cs`.
+
 # Adding Solutions
 - Information related to the problem such as the description, name, and URL should live in `problem_data.yaml`.
 - The `solution` property in the YAML config file is meant to be manually set after solving the problem. It should be used as a sanity check when changes to a solution for efficiency, etc. are made. This means passing the `--validate` flag **should** cause an exception to be raised for solutions still under development.
@@ -181,20 +184,23 @@ if __name__ == "__main__":
 
 ## C#
 - Solution files are expected to be in the `solutions/csharp` directory.
-- Each solution is expected to contain a function `Solve()` that overrides the superclass Problem's `Solve()` function. `Solve()` is expected to return a single integer, the problem solution.
+- Each solution is expected to contain a function `Solve()` that overrides the superclass Problem's `Solve()` function. `Solve()` is expected to return a single BigInteger, the problem solution.
 - Each problem is expected to be in its own file.
 - Command line arguments are stored in `Options.cs`.
 - All relevant files are expected to be in the same namespace, `ProjectEuler`.
 
 ### Solution Template
 ```csharp
+using System.Numerics;
+
+
 namespace ProjectEuler
 {
     class Problem1 : Problem
     {
-        public override int Solve()
+        public override BigInteger Solve()
         {
-            int total = 0;
+            BigInteger total = 0;
 
             // do math-y things
 
