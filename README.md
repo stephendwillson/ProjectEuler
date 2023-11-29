@@ -90,10 +90,16 @@ Functions that are likely to show up repeatedly like hunting for prime numbers s
 
 ## C#
 ### Dependencies
-CommandLineParser and YamlDotNet packages are required for the C# driver:
+Several packages are required for the C# driver:
 ```bash
 dotnet add package CommandLineParser --version 2.9.1
 dotnet add package YamlDotNet --version 13.7.1
+```
+
+The tests require NUnit:
+```bash
+dotnet add package NUnit --version 3.13.1
+dotnet add package NUnit3TestAdapter --version 3.17.0
 ```
 
 ### Driver
@@ -233,7 +239,7 @@ problems:
 A set of Python tests are implemented using pytest.
 
 ### Organization
-Tests should live in `project_root/tests/`.
+Tests should live in `project_root/tests/python`.
 
 
 `test_problems.py`

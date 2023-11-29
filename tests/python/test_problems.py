@@ -2,7 +2,7 @@ import os
 import importlib
 import pytest
 
-from tests.test_utils import load_problem_data
+from tests.python.test_utils import load_problem_data
 import solutions.python
 
 
